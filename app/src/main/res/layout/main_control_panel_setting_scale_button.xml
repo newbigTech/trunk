@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+  <ImageView
+      android:id="@id/btn_view"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:src="@drawable/setting_zoom_out_button_normal"
+      android:layout_centerInParent="true"/>
+
+  <TextView
+      android:textSize="@dimen/font_size_ld_dp"
+      android:id="@id/txt_btn_view"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/main_control_panel_setting_empty_car"
+      android:layout_centerInParent="true"
+      style="@style/Button.Orange"/>
+</RelativeLayout>

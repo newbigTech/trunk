@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android">
+  <ImageView android:id="@id/iv_im_loading_bg" android:background="@drawable/go_pick_im_btn_loading"
+      android:visibility="invisible" android:clickable="false"
+      android:layout_width="@dimen/go_pick_call_btn_width_dp"
+      android:layout_height="@dimen/go_pick_call_btn_width_dp"
+      android:layout_centerInParent="true"/>
+  <Button android:id="@id/btn_im_invalid" android:background="@drawable/go_pick_im_btn_disable"
+      android:visibility="invisible" android:clickable="true"
+      android:layout_width="@dimen/go_pick_call_btn_width_dp"
+      android:layout_height="@dimen/go_pick_call_btn_width_dp"
+      android:layout_centerInParent="true"/>
+  <Button android:id="@id/btn_im" android:background="@drawable/go_pick_im_btn_selector"
+      android:visibility="visible" android:clickable="true"
+      android:layout_width="@dimen/go_pick_call_btn_width_dp"
+      android:layout_height="@dimen/go_pick_call_btn_width_dp"
+      android:layout_centerInParent="true"/>
+  <ImageView android:id="@id/btn_im_bg" android:background="@color/btn_gray_normal"
+      android:visibility="invisible" android:clickable="false"
+      android:layout_width="@dimen/go_pick_call_btn_width_dp"
+      android:layout_height="@dimen/go_pick_call_btn_width_dp"
+      android:layout_centerInParent="true"/>
+  <TextView android:textSize="@dimen/f_24" android:textColor="@color/c_white_ffffffff"
+      android:gravity="center" android:id="@id/tv_im_unread_msg_cnt_badge"
+      android:background="@drawable/im_remind_opacity_bg" android:visibility="visible"
+      android:layout_width="@dimen/im_btn_unread_msg_bg_side"
+      android:layout_height="@dimen/im_btn_unread_msg_bg_side" android:ems="1"
+      android:singleLine="true" android:layout_alignTop="@id/btn_im_bg"
+      android:layout_alignRight="@id/btn_im_bg"/>
+</merge>

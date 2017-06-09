@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="horizontal" android:id="@id/selector_layout" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/star_one" android:layout_width="@dimen/order_detail_evaluate_star_width_dp" android:layout_height="@dimen/order_detail_evaluate_star_height_dp" android:layout_marginRight="@dimen/order_detail_evaluate_star_margin_dp" />
+    <ImageView android:id="@id/star_two" android:layout_width="@dimen/order_detail_evaluate_star_width_dp" android:layout_height="@dimen/order_detail_evaluate_star_height_dp" android:layout_marginRight="@dimen/order_detail_evaluate_star_margin_dp" />
+    <ImageView android:id="@id/star_three" android:layout_width="@dimen/order_detail_evaluate_star_width_dp" android:layout_height="@dimen/order_detail_evaluate_star_height_dp" android:layout_marginRight="@dimen/order_detail_evaluate_star_margin_dp" />
+    <ImageView android:id="@id/star_four" android:layout_width="@dimen/order_detail_evaluate_star_width_dp" android:layout_height="@dimen/order_detail_evaluate_star_height_dp" android:layout_marginRight="@dimen/order_detail_evaluate_star_margin_dp" />
+    <ImageView android:id="@id/star_five" android:layout_width="@dimen/order_detail_evaluate_star_width_dp" android:layout_height="@dimen/order_detail_evaluate_star_height_dp" />
+</LinearLayout>

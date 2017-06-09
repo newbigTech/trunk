@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/layout_order_pop_view"
+    android:background="@drawable/order_pop_bg"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+  <com.uniware.driver.gui.fragment.order.OrderTitleView
+      android:id="@id/order_fragment_title"
+      android:layout_width="fill_parent"
+      android:layout_height="50dp"/>
+
+  <RelativeLayout
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/order_fragment_title">
+    <RelativeLayout
+        android:id="@id/order_pop_btn_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/order_pop_tip_btn_left_margin_dp"
+        android:layout_marginRight="@dimen/order_pop_tip_btn_left_margin_dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true">
+      <com.uniware.driver.gui.ui.controlpanel.GrabForbidButton
+          android:id="@id/btn_count_down"
+          android:visibility="gone"
+          android:clickable="true"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"/>
+
+      <com.uniware.driver.gui.ui.controlpanel.GrabButton
+          android:id="@id/btn_grab"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"/>
+    </RelativeLayout>
+
+    <FrameLayout
+        android:gravity="center_horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/order_pop_btn_view"
+        android:layout_centerVertical="true">
+      <com.uniware.driver.gui.fragment.order.CommonOrderAddressView
+          android:id="@id/order_fragment_address"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"/>
+
+      <com.uniware.driver.gui.fragment.order.CarpoolOrderAddressView
+          android:id="@id/order_fragment_carpool_address"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"/>
+    </FrameLayout>
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:id="@id/order_fragment_layout_close"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_alignParentRight="true">
+
+    <ImageView
+        android:id="@id/order_fragment_img_close"
+        android:background="@drawable/order_fragment_ic_close_instant_normal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:contentDescription="@null"/>
+  </RelativeLayout>
+</RelativeLayout>

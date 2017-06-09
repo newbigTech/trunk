@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/sv_container"
+    android:background="@drawable/mode_advanced_setting_input_bkg"
+    android:layout_width="fill_parent"
+    android:layout_height="47.0dip">
+  <TextView android:textSize="@dimen/font_size_medium" android:textColor="@color/more_trans_white"
+      android:ellipsize="end" android:id="@id/left_text" android:layout_width="wrap_content"
+      android:layout_height="wrap_content" android:layout_marginLeft="7.0dip"
+      android:layout_marginRight="30.0dip"
+      android:text="@string/mode_addvanced_setting_sync_dest_input_hint" android:singleLine="true"
+      android:layout_alignParentLeft="true" android:layout_centerVertical="true"/>
+  <ImageButton android:id="@id/right_img_btn"
+      android:background="@drawable/left_text_and_right_btn_img" android:layout_width="47.0dip"
+      android:layout_height="44.0dip" android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"/>
+</RelativeLayout>

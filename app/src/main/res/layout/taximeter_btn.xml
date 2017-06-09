@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+  <ImageView android:id="@id/iv_ring_bg" android:background="@drawable/taximeter_white_bg"
+      android:layout_width="@dimen/go_pick_call_btn_width_dp"
+      android:layout_height="@dimen/go_pick_call_btn_width_dp"
+      android:layout_centerInParent="true"/>
+  <LinearLayout android:gravity="center_horizontal" android:orientation="vertical"
+      android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:layout_centerInParent="true">
+    <TextView android:textSize="@dimen/f_28" android:textColor="@color/c_orange_ff8903"
+        android:gravity="center" android:id="@id/tv_fare" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="8000.5"/>
+    <TextView android:textSize="@dimen/f_28" android:textColor="@color/c_orange_ff8903"
+        android:gravity="center" android:id="@id/tv_fare_yuan" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:text="@string/common_yuan"/>
+  </LinearLayout>
+</RelativeLayout>

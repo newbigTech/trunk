@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/c_white_ffffffff">
+  <com.uniware.driver.gui.ui.TitleView android:id="@id/title_go_pick"
+      android:layout_width="fill_parent" android:layout_height="@dimen/title_height_dp"/>
+  <include layout="@layout/navi_bar" android:id="@id/go_pick_navi_bar"
+      android:visibility="visible" android:clickable="true" android:layout_width="fill_parent"
+      android:layout_height="@dimen/go_pick_order_info_bg_height_dp"
+      android:layout_below="@id/title_go_pick"/>
+  <TextView android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/go_pick_navi_bar"
+      android:id="@+id/text_descr"
+      android:layout_centerHorizontal="true"
+      android:padding="8dp"
+      android:textSize="15sp"
+      android:textColor="@color/c_red_e37378"
+      android:drawableLeft="@drawable/ic_zhuyikan"
+      android:visibility="gone"
+      />
+  <FrameLayout
+      android:id="@id/go_pick_navi_map"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/text_descr"/>
+  <LinearLayout android:gravity="center_horizontal" android:orientation="vertical"
+      android:layout_width="fill_parent" android:layout_height="wrap_content"
+      android:layout_alignParentBottom="true">
+    <Button android:id="@id/btn_go_pick" android:layout_width="fill_parent"
+        android:layout_height="46.0dip" android:layout_marginLeft="12.0dip"
+        android:layout_marginRight="12.0dip" android:layout_marginBottom="12.0dip"
+        android:text="@string/btn_init_psnger"
+        style="@style/Button.LoginRegister.OrangeBackGround"/>
+  </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+>
+
+  <android.support.v7.widget.RecyclerView
+      android:id="@id/rv_grid_setting"
+      android:fadingEdge="none"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_marginBottom="83.0dip"
+      android:listSelector="@drawable/list_selector"
+      android:scrollingCache="false"
+      android:divider="@color/list_divider"
+      android:dividerHeight="0.0px"
+      android:headerDividersEnabled="false"
+      android:footerDividersEnabled="false"/>
+</RelativeLayout>

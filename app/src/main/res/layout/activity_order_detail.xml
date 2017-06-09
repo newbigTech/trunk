@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/c_white_ffffffff">
+  <com.uniware.driver.gui.ui.TitleView android:id="@id/order_detail_title_view"
+      android:layout_width="fill_parent" android:layout_height="@dimen/title_height_dp"/>
+  <include layout="@layout/navi_bar" android:id="@id/order_detail_navi_bar"
+      android:visibility="visible" android:clickable="true" android:layout_width="fill_parent"
+      android:layout_height="@dimen/go_pick_order_info_bg_height_dp"
+      android:layout_below="@id/order_detail_title_view"/>
+  <FrameLayout
+      android:id="@id/order_detail_content"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_below="@id/order_detail_navi_bar">
+
+  </FrameLayout>
+  <TextView
+      android:visibility="gone"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:id="@+id/tv_tobaidu"
+      android:textColor="@color/c_red_e37378"
+      android:text="使用百度导航"/>
+</RelativeLayout>

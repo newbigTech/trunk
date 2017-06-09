@@ -1,0 +1,112 @@
+//presentation 表现层
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt'
+
+buildscript {
+  repositories {
+    jcenter()
+  }
+  dependencies {
+    classpath 'com.neenbedankt.gradle.plugins:android-apt:1.4'
+  }
+}
+
+android {
+  compileSdkVersion 23
+  buildToolsVersion '23.0.2'
+
+  defaultConfig {
+
+    applicationId "com.uniware.driver"
+    minSdkVersion 15
+    targetSdkVersion 22
+    versionCode 12
+    versionName "1.10.00"
+    manifestPlaceholders = [GETUI_APP_ID    : "NB4dA5ONuVA32o9RWh4yE9",
+                            GETUI_APP_KEY   : "DaetpMcci26TV02a4CJ1W",
+                            GETUI_APP_SECRET: "vJYcsVbeSl5ugTE9IuRip9",
+                            PACKAGE_NAME    : applicationId]
+  }
+  allprojects {
+    repositories {
+      jcenter()
+    }
+    task clean(type: Delete) {
+      delete rootProject.buildDir
+    }
+  }
+  signingConfigs {
+    debug {
+      storeFile file("../AppKeyStore")
+      storePassword "uniware"
+      keyAlias "uniwareappkey"
+      keyPassword "uniware"
+    }
+    release {
+      storeFile file("../AppKeyStore")
+      storePassword "uniware"
+      keyAlias "uniwareappkey"
+      keyPassword "uniware"
+    }
+  }
+  buildTypes {
+    debug {
+      //签名
+      signingConfig signingConfigs.debug
+    }
+    release {
+      // 不显示Log
+      buildConfigField "boolean", "LOG_DEBUG", "false"
+      //混淆
+      minifyEnabled false
+      //Zipalign优化
+      zipAlignEnabled true
+      // 移除无用的resource文件
+      shrinkResources true
+      proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+      //签名
+      signingConfig signingConfigs.release
+    }
+  }
+  compileOptions {
+    encoding "UTF-8"
+    sourceCompatibility JavaVersion.VERSION_1_7
+    targetCompatibility JavaVersion.VERSION_1_7
+  }
+  lintOptions {
+    abortOnError false
+  }
+  packagingOptions {
+    exclude 'META-INF/LICENSE.txt'
+    exclude 'META-INF/NOTICE.txt'
+    //rxNetty冲突文件
+    exclude 'META-INF/INDEX.LIST'
+    exclude 'META-INF/BenchmarkList'
+    exclude 'META-INF/io.netty.versions.properties'
+    exclude 'META-INF/CompilerHints'
+  }
+}
+
+dependencies {
+  compile fileTree(include: ['*.jar'], dir: 'libs')
+  testCompile 'junit:junit:4.12'
+  compile project(':domain')
+  compile project(':data')
+  compile project(':peacock')
+  apt 'com.google.dagger:dagger-compiler:2.1'
+  provided 'javax.annotation:jsr250-api:1.0'
+  compile 'com.google.dagger:dagger:2.1'
+  compile 'io.reactivex:rxandroid:1.1.0'
+  compile 'com.jakewharton:butterknife:7.0.1'
+  //compile 'com.android.support:support-v4:20.+'
+  //友盟统计分析
+  compile 'com.umeng.analytics:analytics:latest.integration'
+  //个推
+  compile 'com.igexin:sdk:latest.integration'
+  compile 'com.igexin:getuiext:2.0.3'
+  compile 'com.android.support:design:23.1.1'
+  compile 'com.android.support:appcompat-v7:23.0.1'
+  compile 'de.greenrobot:eventbus:3.0.0-beta1'
+  compile files('libs/Sunflower.jar')
+}
+

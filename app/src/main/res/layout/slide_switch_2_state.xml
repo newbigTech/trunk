@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/sv_container"
+    android:background="@drawable/slide_bg" android:layout_width="fill_parent"
+    android:layout_height="64.0dip">
+  <ImageButton android:id="@id/iv_switch_cursor" android:background="@drawable/button_slider_normal"
+      android:layout_width="104.0dip" android:layout_height="62.0dip" android:layout_margin="3.0dip"
+      android:layout_centerVertical="true"/>
+  <TextView android:textSize="@dimen/font_size_medium" android:gravity="center"
+      android:id="@id/switch_text_0" android:layout_width="wrap_content"
+      android:layout_height="wrap_content" android:layout_marginLeft="20.0dip"
+      android:text="@string/mode_addvanced_setting_order_pattern_listen"
+      android:layout_alignParentLeft="true" android:layout_centerVertical="true"/>
+  <TextView android:textSize="@dimen/font_size_medium" android:gravity="center"
+      android:id="@id/switch_text_1" android:layout_width="wrap_content"
+      android:layout_height="wrap_content" android:layout_marginRight="20.0dip"
+      android:text="@string/mode_addvanced_setting_order_pattern_watch"
+      android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+</RelativeLayout>

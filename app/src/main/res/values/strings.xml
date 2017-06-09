@@ -1,0 +1,225 @@
+<resources>
+  <string name="app_name">移步叫车司机</string>
+
+  //Exception messages
+  <string name="exception_message_generic">There was an application error</string>
+  <string name="exception_message_no_connection">There is no internet connection</string>
+  <string name="exception_message_user_not_found">Cannot retrieve user data. Check your internet
+    connection
+  </string>
+
+  <string name="title_activity_start">StartActivity</string>
+  <string name="copyright">大用软件</string>
+  <string name="app_version_head">V</string>
+  <string name="title_my_txt">我</string>
+  <string name="title_back_txt">返回</string>
+  <string name="title_more_txt">更多</string>
+  <string name="title_my_order_txt">我的订单</string>
+  <string name="title_end_order_txt">取消订单</string>
+  <string name="login_title_name_txt">移步叫车司机</string>
+  <string name="yuyue_text">请您立即联系乘客，确保订单有效</string>
+  <string name="login_phone_number_txt">手机号</string>
+  <string name="login_verify_code">验证码</string>
+  <string name="login_passord_txt">密码</string>
+  <string name="login_passord_hint">设置密码</string>
+  <string name="login_btn">登 录</string>
+  <string name="login_register_btn">马上注册</string>
+  <string name="login_forget_pwd_txt">忘记密码？</string>
+  <string name="login_have_no_account_txt">还没有帐号？</string>
+  <string name="login_phone_number_count">请输入正确的11位手机号码</string>
+  <string name="login_input_correct_pwd">请输入正确的密码</string>
+  <string name="login_dialog_waiting_txt">正在登录，请稍候...</string>
+  <string name="login_failed">登录失败</string>
+  <string name="login_success">登录成功</string>
+  <string name="confirm">确认</string>
+  <string name="cancel">取消</string>
+  <string name="order_grabbed_by_others_title">订单已被抢</string>
+  <string name="order_grabbed_by_others_title_explain">接订单得更多积分</string>
+  <string name="order_grabbed_by_others_vs_name">对比</string>
+  <string name="order_grabbed_by_others_vs_distance">距离(米)</string>
+  <string name="order_grabbed_by_others_vs_score">滴米</string>
+  <string name="order_grabbed_by_others_vs_total_result">综合(米)</string>
+  <string name="order_grabbed_by_others_vs_my_name">我</string>
+  <string name="order_grabbed_by_others_vs_my_comment">距离乘客</string>
+  <string name="order_grabbed_by_others_vs_my_distance">1200</string>
+  <string name="order_grabbed_by_others_vs_my_score">-100</string>
+  <string name="order_grabbed_by_others_vs_my_total_result">1100</string>
+  <string name="order_grabbed_by_others_vs_his_name">白师傅 京B∙54**</string>
+  <string name="order_grabbed_by_others_vs_his_comment">距离乘客</string>
+  <string name="order_grabbed_by_others_vs_his_distance">1400</string>
+  <string name="order_grabbed_by_others_vs_his_score">-700</string>
+  <string name="order_grabbed_by_others_vs_his_total_result">700</string>
+  <string name="main_order_flip_to_show_map">向上滑动查看地图</string>
+  <string name="main_order_flip_to_show_order">向下滑动查看订单</string>
+  <string name="main_order_order_tip">小费%s元</string>
+  <string name="main_order_order_grabed">订单已被抢</string>
+  <string name="main_control_panel_show_all">全部</string>
+  <string name="main_control_panel_start_off">电召</string>
+  <string name="main_control_panel_end_off">收车</string>
+  <string name="main_control_panel_go_home">"顺风
+    回家"
+  </string>
+  <string name="main_control_panel_no_go_home">"暂不
+    回家"
+  </string>
+  <string name="main_control_panel_listening">听单中</string>
+  <string name="main_control_panel_linking">连接中</string>
+  <string name="main_control_panel_grab">应召</string>
+  <string name="main_control_panel_grab_count_down">%s 秒</string>
+  <string name="main_control_panel_setting_ok">完成</string>
+  <string name="main_control_panel_setting_on_board">载客</string>
+  <string name="main_control_panel_setting_empty_car">空车</string>
+  <string name="listening_hobby">听单偏好：%s</string>
+  <string name="car_mode">车辆模式：%s</string>
+  <string name="listening_mode">听单模式：%s</string>
+  <string name="listening_range">听单范围：%s 公里</string>
+  <string name="input_phone_retry">重新输入帐号</string>
+  <string name="input_pwd_retry">重新输入密码</string>
+  <string name="btn_text_retry">重试</string>
+  <string name="loading_more">加载更多...</string>
+  <string name="no_more">没有更多了...</string>
+  <string name="title_activity_order_detail">OrderDetailActivity</string>
+  <string name="common_yuan">元</string>
+  <string name="go_pick_find_partner">尚未找到匹配的拼车乘客正在努力寻找中..</string>
+  <string name="launch_payment_car_fare">车费</string>
+  <string name="launch_payment_other_fare">其它</string>
+  <string name="launch_payment_passenger_tip">乘客加价</string>
+  <string name="launch_payment_let_passenger_pay">向乘客收款</string>
+  <string name="common_received_cash">我已现金收款</string>
+  <string name="launch_payment_input_car_fare">请输入计价器金额</string>
+  <string name="waiting_payment_cannot_let_pay">由于乘客版本不支持,您无法发起收款</string>
+  <string name="waiting_payment_let_himself_pay">请让乘客主动发起支付</string>
+  <string name="common_price_explain">计价说明</string>
+  <string name="waiting_payment_modify_fare">修改收款金额</string>
+  <string name="waiting_payment_next_order">进入新订单</string>
+  <string name="order_detail_title_txt">评价状态</string>
+  <string name="order_detail_unevaluated_txt">乘客尚未评价</string>
+  <string name="order_detail_punctual_txt">守时</string>
+  <string name="order_detail_attitude_txt">态度</string>
+  <string name="order_detail_health_txt">卫生</string>
+  <string name="order_detail_cancel_title_txt">订单详情</string>
+  <string name="order_type_instant">即时</string>
+  <string name="order_type_preorder">预约</string>
+  <string name="order_type_preorder_short">短约</string>
+  <string name="order_type_preorder_long">长约</string>
+  <string name="order_complete">订单完成</string>
+  <string name="order_cancel">订单取消</string>
+  <string name="title_go_pick_driving">行程中</string>
+  <string name="title_go_pick_next_trip">下一行程</string>
+  <string name="title_go_pick_picking_psnger">去接乘客</string>
+  <string name="title_go_pick_picking_psnger_1">去接乘客1</string>
+  <string name="title_go_pick_picking_psnger_2">去接乘客2</string>
+  <string name="title_go_pick_sending_psnger_1">去送乘客1</string>
+  <string name="title_go_pick_sending_psnger_2">去送乘客2</string>
+  <string name="title_go_pick_waiting_psnger">等待出发</string>
+  <string name="title_go_pick_waiting_psnger_1">等待1出发</string>
+  <string name="title_go_pick_waiting_psnger_2">等待2出发</string>
+  <string name="btn_arrived_psnger">乘客已送达</string>
+  <string name="btn_arrived_psnger_1">乘客1已送达</string>
+  <string name="btn_arrived_psnger_2">乘客2已送达</string>
+  <string name="btn_in_place_psnger">接到乘客</string>
+  <string name="btn_in_place_psnger_1">接到乘客1</string>
+  <string name="btn_in_place_psnger_2">接到乘客2</string>
+  <string name="btn_init_inactive_psnger_2">去接乘客2</string>
+  <string name="btn_init_psnger">到达上车地点</string>
+  <string name="btn_init_psnger_1">到达上车地点1</string>
+  <string name="btn_init_psnger_2">到达上车地点2</string>
+  <string name="btn_sel_onboard_psnger">到达目的地</string>
+  <string name="btn_sel_onboard_psnger_1">到达目的地1</string>
+  <string name="btn_sel_onboard_psnger_2">到达目的地2</string>
+  <string name="mode">模式</string>
+  <string name="mode_addvanced_setting_async_time_default_start_tts">现在</string>
+  <string name="mode_addvanced_setting_async_time_default_to_tts">任意时间</string>
+  <string name="mode_addvanced_setting_async_time_start">从现在时间</string>
+  <string name="mode_addvanced_setting_async_time_tip">预约时间设置</string>
+  <string name="mode_addvanced_setting_async_time_to">到任意时间</string>
+  <string name="mode_addvanced_setting_carpool_or_not">是否推送拼车单</string>
+  <string name="mode_addvanced_setting_complete">完成</string>
+  <string name="mode_addvanced_setting_hint_home_addr">您尚未填写收车地点，请先前往设置填写</string>
+  <string name="mode_addvanced_setting_on_board_dest_tip">目的地订单设置</string>
+  <string name="mode_addvanced_setting_on_board_input_hint">输入当前订单目的地</string>
+  <string name="mode_addvanced_setting_only_start_pre">只听出车预约单</string>
+  <string name="mode_addvanced_setting_order_hobby">订单偏好</string>
+  <string name="mode_addvanced_setting_order_hobby_distance_begin_tts">偏好</string>
+  <string name="mode_addvanced_setting_order_hobby_distance_best_tts">听最适合您的订单</string>
+  <string name="mode_addvanced_setting_order_hobby_distance_end_tts">km内的订单</string>
+  <string name="mode_addvanced_setting_order_hobby_sync_dest_tip_begin_tts">听前往</string>
+  <string name="mode_addvanced_setting_order_hobby_sync_dest_tip_end_tts">方向的订单</string>
+  <string name="mode_addvanced_setting_order_hobby_time_begin_only_tts">只听从</string>
+  <string name="mode_addvanced_setting_order_hobby_time_begin_tts">听从</string>
+  <string name="mode_addvanced_setting_order_hobby_time_end_start_tts">的出车预约单</string>
+  <string name="mode_addvanced_setting_order_hobby_time_end_tts">的预约订单</string>
+  <string name="mode_addvanced_setting_order_hobby_time_to_tts">到</string>
+  <string name="mode_addvanced_setting_order_pattern">听单方式</string>
+  <string name="mode_addvanced_setting_order_pattern_enter_tts">设置模式</string>
+  <string name="mode_addvanced_setting_order_pattern_exit_tts">完成设置</string>
+  <string name="mode_addvanced_setting_order_pattern_listen">标准听单</string>
+  <string name="mode_addvanced_setting_order_pattern_listen_tts">标准听单</string>
+  <string name="mode_addvanced_setting_order_pattern_watch">快速看单</string>
+  <string name="mode_addvanced_setting_order_pattern_watch_tts">快速看单</string>
+  <string name="mode_addvanced_setting_recover_default">恢复默认</string>
+  <string name="mode_addvanced_setting_start_time_format">%1$s日%2$s时</string>
+  <string name="mode_addvanced_setting_sync_dest_input_hint">输入前往目的地</string>
+  <string name="mode_addvanced_setting_sync_dest_tip">实时目的地</string>
+  <string name="mode_addvanced_setting_sync_dist">自动</string>
+  <string name="mode_addvanced_setting_sync_dist_distance">最优距离</string>
+  <string name="mode_addvanced_setting_sync_tip">实时听单范围(公里)</string>
+  <string name="mode_addvanced_setting_to_time_format">%1$s日%2$s时</string>
+  <string name="model_all">听全部订单</string>
+  <string name="model_bookiing">只听预约订单</string>
+  <string name="model_now">只听实时订单</string>
+
+
+  <string-array name="sdkapi_items">
+    <item>关键字搜索</item>
+    <item>周边搜索</item>
+    <item>手机语音识别</item>
+    <item>外部语音流识别</item>
+    <item>TTS</item>
+    <item>反GEO</item>
+    <item>线路规划demo1</item>
+    <item>线路规划demo2</item>
+    <item>离线数据管理</item>
+    <item>自定义图层</item>
+  </string-array>
+  <string name="search_start">搜索</string>
+  <string name="search_tips">离线检索需要使用"导航离线数据下载"demo下载数据之后才能正常使用！检索范围固定为广东省-深圳市，其他城市请修改demo源代码。
+  </string>
+  <string name="antigeo_tips">离线反geo需要使用"导航离线数据下载"demo下载数据之后才能正常使用！</string>
+  <string name="asr_tips">语音识别需要使用"导航离线数据下载"demo下载广东数据之后才能正常使用！其他城市请修改demo源代码。</string>
+  <string name="suggest_start">提示</string>
+  <string name="search_hint">请输入关键字</string>
+  <string name="record_recording">\u2026正在录音\u2026</string>
+  <string name="record_recognizing">\u2026正在识别\u2026</string>
+  <string name="voiceinput">外部语音流识别</string>
+  <string name="voicenormal">手机语音流识别</string>
+  <string name="keyword_search">关键字搜索</string>
+  <string name="space_search">周边搜索</string>
+  <string name="search_result">搜索结果</string>
+  <string name="search_empty">识别结果为空</string>
+  <string name="search_fail">识别无效</string>
+  <string name="record_start">点击开启</string>
+
+  <!-- 离线数据管理 -->
+  <string name="title_route_guide_demo">1. GPS导航(RouteGuideDemo)</string>
+  <string name="title_route_plan_demo">2. 路线规划(RoutePlanDemo)</string>
+  <string name="title_cruiser">3. 电子狗(CruiserDemo)</string>
+  <string name="title_layer">4. 自定义地图图层(MapLayerDemo)</string>
+  <string name="title_offline_data">5. 导航离线数据下载(DownloadDemo)</string>
+  <string name="title_keyword_search">6. POI搜索-关键字(KeySearchDemo)</string>
+  <string name="title_nearby">7. POI搜索-分类(CatalogSearchDemo)</string>
+  <string name="title_degeo">8. 反GEO(ReverseGeoDemo)</string>
+  <string name="title_tts">9. TTS-Text To Speech(TTSDemo)</string>
+  <string name="title_asr">10. 语音识别(VoiceDemo)</string>
+  <string name="title_asr_input">11. 外部语音识别(VoiceInputDemo)</string>
+  <string name="title_key_verify_demo">12. 密钥验证(KeyVerifyDemo)</string>
+  <string name="title_charset_change_demo">13. 简体繁体转换(CharsetChangeDemo)</string>
+  <string name="online">在线</string>
+  <string name="offline">离线</string>
+
+  <!-- 繁体简体切换 -->
+  <string name="change_to_simplified">地图切换为简体</string>
+  <string name="change_to_traditional">地图切换为繁体</string>
+  <string name="change_to_simplified_tips">已切换为简体，请在地图图层页看效果</string>
+  <string name="change_to_traditional_tips">已切换为繁体，请在地图图层页看效果</string>
+</resources>

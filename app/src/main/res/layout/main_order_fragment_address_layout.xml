@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/c_transparent_00000000"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+  <RelativeLayout
+      android:id="@id/llt_from"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/new_main_order_fragment_address_padding_left"
+      android:layout_marginTop="@dimen/main_order_fragment_address_icon_from_margin_top"
+      android:layout_marginRight="@dimen/new_main_order_fragment_address_padding_right">
+
+    <ImageView
+        android:id="@id/img_address_from"
+        android:layout_width="16.0dip"
+        android:layout_height="22.0dip"
+        android:layout_marginTop="@dimen/main_order_fragment_address_icon_margin_top"
+        android:src="@drawable/common_ic_address_from"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/new_main_order_fragment_address_text_margin_left"
+        android:layout_toRightOf="@id/img_address_from">
+        <!---->
+        android:layout_alignBaseline="@id/img_address_from"
+        <!---->
+
+
+      <TextView
+          android:textSize="@dimen/order_address_name_text_size"
+          android:textColor="@color/text_color_dark_gray"
+
+          android:id="@id/txt_name_from"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:text="得实大厦"
+          android:lineSpacingExtra="2.0dip"
+          style="@style/OrderAddressTextMaxLines"/>
+    </LinearLayout>
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:id="@id/llt_to"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/main_order_fragment_address_icon_to_margin_top"
+      android:layout_marginRight="@dimen/new_main_order_fragment_address_padding_right"
+      android:layout_below="@id/llt_from"
+      android:layout_alignLeft="@id/llt_from">
+
+    <ImageView
+        android:id="@id/img_address_to"
+        android:layout_width="16.0dip"
+        android:layout_height="22.0dip"
+        android:layout_marginTop="@dimen/main_order_fragment_address_icon_margin_top"
+        android:src="@drawable/common_ic_address_to"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/new_main_order_fragment_address_text_margin_left"
+        android:layout_toRightOf="@id/img_address_to"
+        >
+
+      <TextView
+          android:textSize="@dimen/order_address_name_text_size"
+          android:textColor="@color/text_color_dark_gray"
+
+          android:id="@id/txt_name_to"
+          android:visibility="visible"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:text=""
+          android:lineSpacingExtra="2.0dip"
+          style="@style/OrderAddressTextMaxLines"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@id/rl_destination_voice_play"
+        android:background="@drawable/pick_voice_bkg_selector"
+        android:visibility="gone"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/go_pick_voice_bg_height"
+        android:layout_marginLeft="@dimen/new_main_order_fragment_address_text_margin_left"
+        android:layout_marginRight="20.0dip"
+        android:layout_toRightOf="@id/img_address_to">
+
+      <RelativeLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_centerInParent="true">
+
+        <TextView
+            android:textSize="50.0px"
+            android:textColor="@color/c_white_ffffffff"
+            android:id="@id/tv_voice_time_length"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8.0dip"
+            android:text="15s"/>
+
+        <ViewFlipper
+            android:id="@id/viewflipper_destination_voice_play"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:flipInterval="500"
+            android:layout_toRightOf="@id/tv_voice_time_length"
+            android:layout_centerVertical="true">
+
+          <ImageView
+              android:layout_gravity="center"
+              android:layout_width="@dimen/order_info_voice_width"
+              android:layout_height="@dimen/order_info_voice_height"
+              android:src="@drawable/order_info_voice_white_1"/>
+
+          <ImageView
+              android:layout_gravity="center"
+              android:layout_width="@dimen/order_info_voice_width"
+              android:layout_height="@dimen/order_info_voice_height"
+              android:src="@drawable/order_info_voice_white_2"/>
+
+          <ImageView
+              android:layout_gravity="center"
+              android:layout_width="@dimen/order_info_voice_width"
+              android:layout_height="@dimen/order_info_voice_height"
+              android:src="@drawable/order_info_voice_white_3"/>
+        </ViewFlipper>
+      </RelativeLayout>
+    </RelativeLayout>
+  </RelativeLayout>
+
+  <TextView
+      android:visibility="gone"
+      android:drawableLeft="@drawable/ic_zhuyikan"
+      android:textSize="@dimen/f_46"
+      android:id="@id/txt_extinfo"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/new_main_order_fragment_extinfo_margin_left"
+      android:layout_marginTop="@dimen/main_order_fragment_extinfo_margin_top"
+      android:singleLine="true"
+      android:textColor="@color/c_red_fe5826"
+      android:drawablePadding="3.0dip"
+      android:layout_below="@id/llt_to"
+      android:layout_centerHorizontal="true"
+      android:lineSpacingExtra="3.0dip"
+      style="@style/TextView.DeeperGray.Medium.MultiLine"/>
+</RelativeLayout>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merge
+    xmlns:android="http://schemas.android.com/apk/res/android">
+  <include layout="@layout/taximeter_btn" android:gravity="center"
+      android:id="@id/go_pick_taximeter_btn" android:visibility="gone"
+      android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="99"/>
+  <RelativeLayout android:id="@id/go_pick_im_btn" android:visibility="gone"
+      android:layout_width="wrap_content" android:layout_height="wrap_content">
+    <include layout="@layout/im_button" android:visibility="visible"
+        android:layout_width="@dimen/go_pick_call_btn_width_dp" android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/go_pick_call_btn_right_dp"
+        android:layout_alignWithParentIfMissing="true"/>
+  </RelativeLayout>
+  <Button android:id="@id/go_pick_call_btn" android:background="@drawable/go_pick_call_btn_selector"
+      android:visibility="visible" android:layout_width="@dimen/go_pick_call_btn_width_dp"
+      android:layout_height="@dimen/go_pick_call_btn_width_dp"
+      android:layout_marginRight="@dimen/go_pick_call_btn_right_dp"
+      android:layout_toRightOf="@id/go_pick_im_btn"/>
+</merge>

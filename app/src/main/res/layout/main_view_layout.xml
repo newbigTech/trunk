@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+<!--  <com.uniware.driver.gui.ui.TitleView android:id="@id/main_title_view"
+      android:layout_width="fill_parent" android:layout_height="wrap_content"/>-->
+
+  <com.uniware.driver.gui.ui.MainTitleView
+      android:id="@id/main_title_view"
+      android:layout_width="match_parent"
+      android:layout_height="@dimen/title_height_dp">
+  </com.uniware.driver.gui.ui.MainTitleView>
+
+  <android.support.v4.view.ViewPager android:id="@id/main_pager" android:fadingEdge="horizontal"
+      android:layout_width="fill_parent" android:layout_height="fill_parent"
+      android:layout_below="@id/main_title_view"/>
+</RelativeLayout>

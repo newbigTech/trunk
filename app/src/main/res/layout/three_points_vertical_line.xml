@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center_vertical" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:background="@color/c_gray_bebebe" android:layout_width="@dimen/carpool_order_point_width" android:layout_height="@dimen/carpool_order_point_height" android:layout_marginTop="@dimen/carpool_order_point_margin_top" android:layout_marginBottom="@dimen/carpool_order_point_margin_bottom" />
+    <ImageView android:background="@color/c_gray_bebebe" android:layout_width="@dimen/carpool_order_point_width" android:layout_height="@dimen/carpool_order_point_height" android:layout_marginTop="@dimen/carpool_order_point_margin_top" android:layout_marginBottom="@dimen/carpool_order_point_margin_bottom" />
+    <ImageView android:background="@color/c_gray_bebebe" android:layout_width="@dimen/carpool_order_point_width" android:layout_height="@dimen/carpool_order_point_height" android:layout_marginTop="@dimen/carpool_order_point_margin_top" android:layout_marginBottom="@dimen/carpool_order_point_margin_bottom" />
+</LinearLayout>

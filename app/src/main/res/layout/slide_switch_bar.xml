@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:id="@id/sv_container" android:paddingBottom="5.0dip"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+  <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+      android:layout_weight="1.0">
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text" android:gravity="center"
+        android:id="@id/text_2_1_small" android:visibility="invisible"
+        android:layout_width="20.0dip" android:layout_height="20.0dip" android:text="0"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text" android:gravity="center"
+        android:id="@id/text_2_1_big" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text" android:gravity="center"
+        android:id="@id/text_2_2_small" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_big_size"
+        android:textColor="@color/slide_bar_big_text" android:gravity="center"
+        android:id="@id/text_2_2_big" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text"
+        android:id="@id/text_3_1_small" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text" android:gravity="center"
+        android:id="@id/text_3_1_big" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text" android:gravity="center"
+        android:id="@id/text_3_2_small" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_big_size"
+        android:textColor="@color/slide_bar_big_text" android:gravity="center"
+        android:id="@id/text_3_2_big" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text" android:gravity="center"
+        android:id="@id/text_3_3_small" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_big_size"
+        android:textColor="@color/slide_bar_big_text" android:gravity="center"
+        android:id="@id/text_3_3_big" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text"
+        android:id="@id/text_4_1_small" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text" android:gravity="center"
+        android:id="@id/text_4_1_big" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text" android:gravity="center"
+        android:id="@id/text_4_2_small" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_big_size"
+        android:textColor="@color/slide_bar_big_text" android:gravity="center"
+        android:id="@id/text_4_2_big" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text" android:gravity="center"
+        android:id="@id/text_4_3_small" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_big_size"
+        android:textColor="@color/slide_bar_big_text" android:gravity="center"
+        android:id="@id/text_4_3_big" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text" android:gravity="center"
+        android:id="@id/text_4_4_small" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_big_size"
+        android:textColor="@color/slide_bar_big_text" android:gravity="center"
+        android:id="@id/text_4_4_big" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text"
+        android:id="@id/text_5_1_small" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text" android:gravity="center"
+        android:id="@id/text_5_1_big" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="0"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text" android:gravity="center"
+        android:id="@id/text_5_2_small" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_big_size"
+        android:textColor="@color/slide_bar_big_text" android:gravity="center"
+        android:id="@id/text_5_2_big" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="1"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text" android:gravity="center"
+        android:id="@id/text_5_3_small" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_big_size"
+        android:textColor="@color/slide_bar_big_text" android:gravity="center"
+        android:id="@id/text_5_3_big" android:visibility="visible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="2"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text" android:gravity="center"
+        android:id="@id/text_5_4_small" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_big_size"
+        android:textColor="@color/slide_bar_big_text" android:gravity="center"
+        android:id="@id/text_5_4_big" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="3"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_small_size"
+        android:textColor="@color/slide_bar_small_text" android:gravity="center"
+        android:id="@id/text_5_5_small" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4"
+        android:layout_alignParentBottom="true"/>
+    <TextView android:textSize="@dimen/slider_bar_text_big_size"
+        android:textColor="@color/slide_bar_big_text" android:gravity="center"
+        android:id="@id/text_5_5_big" android:visibility="invisible"
+        android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="4"
+        android:layout_alignParentBottom="true"/>
+  </RelativeLayout>
+  <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+      android:layout_weight="1.0">
+    <ImageButton android:id="@id/bg_line_white"
+        android:background="@drawable/slide_bar_white_line_bg" android:layout_width="200.0dip"
+        android:layout_height="2.5dip" android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_line_yellow"
+        android:background="@drawable/slide_bar_yellow_line_bg" android:layout_width="100.0dip"
+        android:layout_height="2.5dip" android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_yellow_2_1"
+        android:background="@drawable/slide_bar_yellow_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_write_2_1"
+        android:background="@drawable/slide_bar_white_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_yellow_2_2"
+        android:background="@drawable/slide_bar_yellow_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_write_2_2"
+        android:background="@drawable/slide_bar_white_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_yellow_3_1"
+        android:background="@drawable/slide_bar_yellow_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_write_3_1"
+        android:background="@drawable/slide_bar_white_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_yellow_3_2"
+        android:background="@drawable/slide_bar_yellow_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_write_3_2"
+        android:background="@drawable/slide_bar_white_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_yellow_3_3"
+        android:background="@drawable/slide_bar_yellow_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_write_3_3"
+        android:background="@drawable/slide_bar_white_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_yellow_4_1"
+        android:background="@drawable/slide_bar_yellow_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_write_4_1"
+        android:background="@drawable/slide_bar_white_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_yellow_4_2"
+        android:background="@drawable/slide_bar_yellow_small_circle_bg" android:visibility="visible"
+        android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_write_4_2"
+        android:background="@drawable/slide_bar_white_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_yellow_4_3"
+        android:background="@drawable/slide_bar_yellow_small_circle_bg" android:visibility="visible"
+        android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_write_4_3"
+        android:background="@drawable/slide_bar_white_small_circle_bg" android:visibility="visible"
+        android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_yellow_4_4"
+        android:background="@drawable/slide_bar_yellow_small_circle_bg" android:visibility="visible"
+        android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_write_4_4"
+        android:background="@drawable/slide_bar_white_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_yellow_5_1"
+        android:background="@drawable/slide_bar_yellow_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_write_5_1"
+        android:background="@drawable/slide_bar_white_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_yellow_5_2"
+        android:background="@drawable/slide_bar_yellow_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_write_5_2"
+        android:background="@drawable/slide_bar_white_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_yellow_5_3"
+        android:background="@drawable/slide_bar_yellow_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_write_5_3"
+        android:background="@drawable/slide_bar_white_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_yellow_5_4"
+        android:background="@drawable/slide_bar_yellow_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_write_5_4"
+        android:background="@drawable/slide_bar_white_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_yellow_5_5"
+        android:background="@drawable/slide_bar_yellow_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:gravity="center"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageButton android:id="@id/bg_small_circle_write_5_5"
+        android:background="@drawable/slide_bar_white_small_circle_bg"
+        android:visibility="invisible" android:layout_width="@dimen/slider_bar_circle_normal_size"
+        android:layout_height="@dimen/slider_bar_circle_normal_size"
+        android:layout_centerVertical="true"/>
+    <ImageView android:id="@id/iv_switch_cursor"
+        android:background="@drawable/button_zoned_block_1280p" android:visibility="visible"
+        android:layout_width="40.0dip" android:layout_height="40.0dip"
+        android:layout_centerVertical="true"/>
+  </RelativeLayout>
+</LinearLayout>

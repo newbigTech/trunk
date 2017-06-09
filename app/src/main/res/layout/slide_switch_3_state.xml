@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/sv_container"
+    android:background="@drawable/slide_bg" android:layout_width="fill_parent"
+    android:layout_height="64.0dip">
+  <ImageButton android:id="@id/iv_switch_cursor" android:background="@drawable/button_slider_normal"
+      android:layout_width="90.0dip" android:layout_height="62.0dip" android:layout_margin="3.0dip"
+      android:layout_centerVertical="true"/>
+  <TextView android:textSize="@dimen/font_size_medium" android:gravity="center"
+      android:id="@id/switch_text_0" android:layout_width="90.0dip" android:layout_height="62.0dip"
+      android:layout_margin="3.0dip" android:text="@string/order_type_instant"
+      android:layout_alignParentLeft="true" android:layout_centerVertical="true"/>
+  <TextView android:textSize="@dimen/font_size_medium" android:gravity="center"
+      android:id="@id/switch_text_1" android:layout_width="90.0dip" android:layout_height="62.0dip"
+      android:layout_margin="3.0dip" android:text="@string/order_type_preorder"
+      android:layout_centerHorizontal="true" android:layout_centerVertical="true"/>
+  <TextView android:textSize="@dimen/font_size_medium" android:gravity="center"
+      android:id="@id/switch_text_2" android:layout_width="90.0dip" android:layout_height="62.0dip"
+      android:layout_margin="3.0dip" android:text="@string/main_control_panel_show_all"
+      android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+</RelativeLayout>

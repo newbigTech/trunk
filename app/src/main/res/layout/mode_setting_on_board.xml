@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android" android:orientation="vertical"
+    android:background="#53000000" android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+  <ImageView android:id="@id/img_background" android:background="@drawable/common_bg_noon"
+      android:layout_width="fill_parent" android:layout_height="fill_parent"/>
+  <com.uniware.driver.gui.ui.TitleView android:id="@id/setting_on_board_title_view"
+      android:layout_width="fill_parent"
+      android:layout_height="@dimen/login_dynamic_code_title_height"/>
+  <ImageView android:background="#53000000" android:clickable="true"
+      android:layout_width="fill_parent" android:layout_height="fill_parent"/>
+  <RelativeLayout android:orientation="vertical" android:id="@id/line_bubble"
+      android:layout_width="fill_parent" android:layout_height="wrap_content"
+      android:layout_marginBottom="5.0dip" android:layout_above="@id/setting_button">
+    <LinearLayout android:orientation="vertical" android:id="@id/line_bubble_rec"
+        android:background="@drawable/mode_advanced_setting_preference_bkg"
+        android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginLeft="10.0dip" android:layout_marginTop="7.0dip"
+        android:layout_marginRight="10.0dip">
+      <TextView android:textSize="@dimen/font_size_small"
+          android:textColor="@color/c_white_99ffffff" android:gravity="center_horizontal"
+          android:layout_width="fill_parent" android:layout_height="wrap_content"
+          android:layout_marginTop="20.0dip" android:layout_marginBottom="15.0dip"
+          android:text="@string/mode_addvanced_setting_on_board_dest_tip"/>
+      <com.uniware.driver.gui.ui.LeftTextAndRightImgBtn android:id="@id/sync_dest_input"
+          android:layout_width="fill_parent" android:layout_height="wrap_content"
+          android:layout_marginLeft="31.0dip" android:layout_marginTop="1.0dip"
+          android:layout_marginRight="31.0dip" android:layout_marginBottom="28.0dip"/>
+    </LinearLayout>
+    <ImageView android:id="@id/order_mode_indicator" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginRight="30.0dip"
+        android:src="@drawable/mode_advanced_setting_preference_indication_down"
+        android:layout_below="@id/line_bubble_rec" android:layout_alignParentRight="true"/>
+  </RelativeLayout>
+  <RelativeLayout android:id="@id/setting_button" android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/control_panel_margin_left"
+      android:layout_marginRight="@dimen/control_panel_margin_left"
+      android:layout_marginBottom="@dimen/order_set_foot_margin_bottom"
+      android:layout_alignParentBottom="true">
+    <TextView android:textSize="@dimen/font_size_ld_dp"
+        android:textColor="@color/setting_go_offline_text" android:gravity="center"
+        android:id="@id/setting_go_offline_btn"
+        android:background="@drawable/setting_zoom_out_button_normal"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:text="@string/main_control_panel_end_off" android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"/>
+  </RelativeLayout>
+</RelativeLayout>

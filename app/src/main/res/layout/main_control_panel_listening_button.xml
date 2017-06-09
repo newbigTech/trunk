@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+  <ImageView
+      android:id="@id/btn_listening_ring"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"/>
+
+  <com.xfdsj.peacock.PeacockMenu
+      xmlns:app="http://schemas.android.com/apk/res-auto"
+      android:id="@id/menu_peacock_listening"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"
+      android:background="@drawable/main_control_panel_btn_listening_cover"
+      app:startAngle="180.0"
+      app:endAngle="360.0"
+      app:radius="@dimen/peacock_menu_radius">
+    <com.xfdsj.peacock.PeacockMenu
+        android:id="@id/submenu_peacock_empty"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:menuIco="@drawable/main_control_panel_btn_empty_selector"/>
+
+    <com.xfdsj.peacock.PeacockMenu
+        android:id="@id/submenu_peacock_wind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:menuIco="@drawable/main_control_panel_btn_wind_selector"/>
+
+    <com.xfdsj.peacock.PeacockMenu
+        android:id="@id/submenu_peacock_setting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:menuIco="@drawable/main_control_panel_btn_setting_selector"/>
+
+    <com.xfdsj.peacock.PeacockMenu
+        android:id="@id/submenu_peacock_carry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:menuIco="@drawable/main_control_panel_btn_carry_selector"/>
+  </com.xfdsj.peacock.PeacockMenu>
+
+  <TextView
+      android:textSize="@dimen/f_34"
+      android:id="@id/txt_listening_order"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:text="@string/main_control_panel_listening"
+      android:layout_centerInParent="true"
+      style="@style/Button.Orange"/>
+</RelativeLayout>

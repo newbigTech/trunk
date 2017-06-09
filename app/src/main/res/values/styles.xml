@@ -1,0 +1,385 @@
+<resources>
+
+  <!-- Base application theme. -->
+  <style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">
+  </style>
+
+  <style name="AppTheme.ProgressBar">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_centerInParent">true</item>
+    <item name="android:layout_gravity">center</item>
+    <item name="android:visibility">visible</item>
+  </style>
+
+  <style name="AppTheme.Button">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_centerVertical">true</item>
+    <item name="android:layout_centerHorizontal">true</item>
+    <item name="android:layout_gravity">center</item>
+  </style>
+
+  <!--<style name="Dialog" parent="android:style/Theme.Dialog">-->
+    <!--<item name="android:background">#00000000</item>-->
+    <!--<item name="android:windowBackground">@android:color/transparent</item>-->
+    <!--<item name="android:windowNoTitle">true</item>-->
+    <!--<item name="android:windowIsFloating">true</item>-->
+  <!--</style>-->
+
+  <style name="AppTheme.TextViewHeader">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginBottom">@dimen/header_margin</item>
+    <item name="android:textSize">@dimen/header_text_size</item>
+    <item name="android:textStyle">bold</item>
+    <item name="android:gravity">center</item>
+    <item name="android:background">@android:color/background_light</item>
+  </style>
+
+  <style name="AppTheme.TextViewTitle">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginTop">@dimen/header_margin</item>
+    <item name="android:textStyle">bold</item>
+  </style>
+
+  <style name="Theme.Dialog.Alert" parent="@android:style/Theme.Dialog">
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+  </style>
+  <style name="NPWidget">
+    <item name="android:textAppearance">?android:textAppearance</item>
+  </style>
+  <style name="TextView">
+    <item name="android:textSize">@dimen/f_34</item>
+    <item name="android:singleLine">true</item>
+  </style>
+  <style name="TextView.White" parent="@style/TextView">
+    <item name="android:textColor">@color/c_white_ffffffff</item>
+    <item name="android:gravity">left</item>
+  </style>
+  <style name="TextView.White.Small" parent="@style/TextView.White">
+    <item name="android:textSize">@dimen/f_30</item>
+  </style>
+  <style name="TextView.White.Large" parent="@style/TextView.White">
+    <item name="android:textSize">@dimen/f_42</item>
+  </style>
+  <style name="TextView.White.Large.Translucent_75" parent="@style/TextView.White.Large">
+    <item name="android:textColor">@color/c_white_c0ffffff</item>
+  </style>
+  <style name="TextView.White.XLarge" parent="@style/TextView.White">
+    <item name="android:textSize">@dimen/f_48</item>
+  </style>
+  <style name="TextView.White.XLarge.Center" parent="@style/TextView.White.XLarge">
+    <item name="android:gravity">center</item>
+  </style>
+  <style name="TextView.White.XXLarge" parent="@style/TextView.White">
+    <item name="android:textSize">@dimen/f_54</item>
+  </style>
+  <style name="TextView.White.XXXXLarge" parent="@style/TextView.White">
+    <item name="android:textSize">@dimen/f_82</item>
+  </style>
+  <style name="TextView.Gray" parent="@style/TextView">
+    <item name="android:textColor">@color/c_gray_888888</item>
+  </style>
+  <style name="TextView.DeepGray" parent="@style/TextView">
+    <item name="android:textColor">@color/c_gray_666666</item>
+  </style>
+  <style name="TextView.DeeperGray" parent="@style/TextView">
+    <item name="android:textColor">@color/c_gray_666666</item>
+  </style>
+  <style name="Button.Gray.Small" parent="@style/Button.Gray">
+    <item name="android:textSize">@dimen/f_30</item>
+  </style>
+  <style name="Button.DeepGray.Small" parent="@style/Button.DeepGray">
+    <item name="android:textSize">@dimen/f_30</item>
+  </style>
+  <style name="Button.DeeperGray.Small" parent="@style/Button.DeeperGray">
+    <item name="android:textSize">@dimen/f_30</item>
+  </style>
+  <style name="TextView.LightGray.Medium" parent="@style/TextView.LightGray">
+    <item name="android:textSize">@dimen/f_34</item>
+  </style>
+  <style name="TextView.LighterGray" parent="@style/TextView">
+    <item name="android:textColor">@color/c_gray_bababa</item>
+  </style>
+  <style name="TextView.LighterGray.Medium" parent="@style/TextView.LighterGray">
+    <item name="android:textSize">@dimen/f_34</item>
+  </style>
+  <style name="TextView.LighterGray.Medium.SingleLine" parent="@style/TextView.LighterGray.Medium">
+    <item name="android:singleLine">true</item>
+  </style>
+  <style name="TextView.LighterGray.Medium.MultiLine" parent="@style/TextView.LighterGray.Medium">
+    <item name="android:maxLines">2</item>
+    <item name="android:singleLine">false</item>
+  </style>
+  <style name="TextView.LightGray" parent="@style/TextView">
+    <item name="android:textColor">@color/c_gray_b3b3b3</item>
+  </style>
+  <style name="TextView.LightGray.Small" parent="@style/TextView.LightGray">
+    <item name="android:textSize">@dimen/f_30</item>
+  </style>
+  <style name="TextView.LightGray.XLarge" parent="@style/TextView.LightGray">
+    <item name="android:textSize">@dimen/f_48</item>
+  </style>
+  <style name="TextView.Gray.Medium" parent="@style/TextView.Gray">
+    <item name="android:textSize">@dimen/f_34</item>
+  </style>
+  <style name="TextView.Gray.Large" parent="@style/TextView.Gray">
+    <item name="android:textSize">@dimen/f_42</item>
+  </style>
+  <style name="TextView.Gray.XLarge" parent="@style/TextView.Gray">
+    <item name="android:textSize">@dimen/f_48</item>
+  </style>
+  <style name="TextView.Gray.XXLarge" parent="@style/TextView.Gray">
+    <item name="android:textSize">@dimen/f_54</item>
+  </style>
+  <style name="TextView.DeeperGray.Medium" parent="@style/TextView.DeeperGray">
+    <item name="android:textSize">@dimen/f_34</item>
+  </style>
+  <style name="TextView.DeeperGray.XXLarge" parent="@style/TextView.DeeperGray">
+    <item name="android:textSize">@dimen/f_54</item>
+  </style>
+  <style name="TextView.Gray.Small" parent="@style/TextView.Gray">
+    <item name="android:textSize">@dimen/f_30</item>
+  </style>
+  <style name="TextView.Gray.Medium.SingleLine" parent="@style/TextView.Gray.Medium">
+    <item name="android:singleLine">true</item>
+  </style>
+  <style name="TextView.Gray.XLarge.MultiLine" parent="@style/TextView.Gray.XLarge">
+    <item name="android:singleLine">false</item>
+  </style>
+  <style name="TextView.DeeperGray.XXLarge.MultiLine" parent="@style/TextView.DeeperGray.XXLarge">
+    <item name="android:singleLine">false</item>
+  </style>
+  <style name="TextView.DeeperGray.Medium.SingleLine" parent="@style/TextView.DeeperGray.Medium">
+    <item name="android:singleLine">true</item>
+  </style>
+  <style name="TextView.DeeperGray.Medium.MultiLine" parent="@style/TextView.DeeperGray.Medium">
+    <item name="android:singleLine">false</item>
+  </style>
+  <style name="TextView.DeeperGray.XXLarge.SingleLine" parent="@style/TextView.DeeperGray.XXLarge">
+    <item name="android:singleLine">true</item>
+  </style>
+  <style name="Button">
+    <item name="android:textSize">@dimen/f_34</item>
+    <item name="android:gravity">center</item>
+    <item name="android:singleLine">true</item>
+  </style>
+  <style name="Button.White" parent="@style/Button">
+    <item name="android:textColor">@color/c_white_ffffffff</item>
+  </style>
+  <style name="Button.TransOrange" parent="@style/Button">
+    <item name="android:textColor">@color/trans_orange</item>
+  </style>
+  <style name="Button.LoginRegister" parent="@style/Button.White">
+    <item name="android:layout_width">@dimen/register_edttxt_width_dp</item>
+    <item name="android:layout_height">@dimen/common_btn_confirm_height_dp</item>
+    <item name="android:layout_centerHorizontal">true</item>
+  </style>
+  <style name="Button.LoginRegister.OrangeBackGround" parent="@style/Button.LoginRegister">
+    <item name="android:background">@drawable/common_btn_orange_selector</item>
+  </style>
+  <style name="Button.LoginRegister.WhiteBackGround" parent="@style/Button.LoginRegister">
+    <item name="android:background">@drawable/common_btn_white_selector</item>
+  </style>
+  <style name="Button.LoginRegister.WhiteBackGround.OrangeText"
+      parent="@style/Button.LoginRegister.WhiteBackGround">
+    <item name="android:textColor">@color/c_orange_ff8a01</item>
+  </style>
+  <style name="Button.White.OrangeBackGround" parent="@style/Button.White">
+    <item name="android:background">@drawable/common_btn_orange_selector</item>
+  </style>
+  <style name="Button.Orange" parent="@style/Button">
+    <item name="android:textColor">@color/c_orange_ff8a01</item>
+  </style>
+  <style name="Button.Gray" parent="@style/Button">
+    <item name="android:textColor">@color/c_gray_888888</item>
+  </style>
+  <style name="Button.DeepGray" parent="@style/Button">
+    <item name="android:textColor">@color/c_gray_666666</item>
+  </style>
+  <style name="Button.DeeperGray" parent="@style/Button">
+    <item name="android:textColor">@color/c_gray_666666</item>
+  </style>
+  <style name="Button.White.Small" parent="@style/Button.White">
+    <item name="android:textSize">@dimen/f_30</item>
+  </style>
+  <style name="Button.White.Medium" parent="@style/Button.White">
+    <item name="android:textSize">@dimen/f_34</item>
+  </style>
+  <style name="Button.White.Large" parent="@style/Button.White">
+    <item name="android:textSize">@dimen/f_42</item>
+  </style>
+  <style name="Button.White.XLarge" parent="@style/Button.White">
+    <item name="android:textSize">@dimen/f_48</item>
+  </style>
+  <style name="Button.White.XXLarge" parent="@style/Button.White">
+    <item name="android:textSize">@dimen/f_54</item>
+  </style>
+  <style name="Button.Orange.Large" parent="@style/Button.Orange">
+    <item name="android:textSize">@dimen/f_42</item>
+  </style>
+  <style name="Button.Orange.XXXXLarge" parent="@style/Button.Orange">
+    <item name="android:textSize">@dimen/f_96</item>
+  </style>
+  <style name="Line">
+    <item name="android:layout_width">@dimen/common_line_width_dp</item>
+  </style>
+  <style name="Line.LighterOrange" parent="@style/Line">
+    <item name="android:background">@color/c_orange_ffc880</item>
+  </style>
+  <style name="EditText">
+    <item name="android:textSize">@dimen/f_34</item>
+    <item name="android:textColor">@color/c_gray_888888</item>
+    <item name="android:textColorHint">@color/c_gray_b3b3b3</item>
+    <item name="android:background">@drawable/common_bg_edittext</item>
+    <item name="android:paddingLeft">@dimen/common_edit_text_hint_padding_left_dp</item>
+    <item name="android:paddingRight">@dimen/common_edit_text_hint_padding_right_dp</item>
+    <item name="android:layout_width">@dimen/register_edttxt_width_dp</item>
+    <item name="android:layout_height">@dimen/register_edttxt_height_dp</item>
+    <item name="android:singleLine">true</item>
+    <item name="android:layout_centerHorizontal">true</item>
+    <item name="android:inputType">text</item>
+  </style>
+  <style name="ImageView">
+    <item name="android:scaleType">fitXY</item>
+    <item name="android:contentDescription">@null</item>
+  </style>
+  <style name="ControlPannel"/>
+  <style name="ControlPannel.Button" parent="@style/ControlPannel">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginBottom">@dimen/main_control_panel_padding_bottom_top</item>
+    <item name="android:layout_alignParentBottom">true</item>
+  </style>
+  <style name="ControlPannel.Button.Assistant" parent="@style/ControlPannel.Button">
+    <item name="android:paddingLeft">@dimen/main_control_panel_padding_left_right</item>
+    <item name="android:paddingTop">@dimen/main_control_panel_padding_bottom_top</item>
+    <item name="android:paddingRight">@dimen/main_control_panel_padding_left_right</item>
+    <item name="android:paddingBottom">@dimen/main_control_panel_padding_bottom_top</item>
+    <item name="android:visibility">gone</item>
+    <item name="android:layout_marginBottom">@dimen/main_control_panel_margin_bottom</item>
+  </style>
+  <style name="ControlPannel.Button.Assistant.Left" parent="@style/ControlPannel.Button.Assistant">
+    <item name="android:layout_alignParentLeft">true</item>
+  </style>
+  <style name="ControlPannel.Button.Assistant.Right" parent="@style/ControlPannel.Button.Assistant">
+    <item name="android:layout_alignParentRight">true</item>
+  </style>
+  <style name="Dialog" parent="@android:style/Theme.Dialog">
+    <item name="android:windowBackground">@color/c_transparent_00000000</item>
+    <item name="android:windowFrame">@null</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+  </style>
+  <style name="TextView.Gray.Medium.Settings" parent="@style/TextView.Gray.Medium">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginLeft">@dimen/settings_text_margin_left_dp</item>
+    <item name="android:layout_centerVertical">true</item>
+  </style>
+  <style name="TextView.Gray.Medium.PersonInfo" parent="@style/TextView.Gray.Medium">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginRight">@dimen/person_info_margin_right_dp</item>
+    <item name="android:layout_alignParentRight">true</item>
+    <item name="android:layout_centerVertical">true</item>
+  </style>
+  <style name="Animation"/>
+  <style name="Animation.PopTip" parent="@style/Animation">
+    <item name="android:windowEnterAnimation">@anim/order_pop_tip_in_down</item>
+    <item name="android:windowExitAnimation">@anim/order_pop_tip_out_up</item>
+  </style>
+  <style name="WithdrawCashEditText">
+    <item name="android:textSize">17.0sp</item>
+    <item name="android:textColor">@color/c_gray_888888</item>
+    <item name="android:textColorHint">@color/c_gray_b3b3b3</item>
+    <item name="android:background">#00000000</item>
+    <item name="android:singleLine">true</item>
+  </style>
+  <style name="WithdrawCashSuccessTextView">
+    <item name="android:textSize">16.0sp</item>
+    <item name="android:textColor">@color/c_gray_888888</item>
+    <item name="android:textColorHint">@color/c_gray_b3b3b3</item>
+    <item name="android:singleLine">true</item>
+  </style>
+  <style name="AcceptFareRewardTextView1">
+    <item name="android:textSize">12.0sp</item>
+    <item name="android:textColor">#ff888888</item>
+    <item name="android:singleLine">true</item>
+  </style>
+  <style name="AcceptFareRewardTextView2">
+    <item name="android:textSize">15.0sp</item>
+    <item name="android:textColor">#ffff7f01</item>
+    <item name="android:singleLine">true</item>
+  </style>
+  <style name="DialogAnimation">
+    <item name="android:windowEnterAnimation">@anim/alpha_in</item>
+    <item name="android:windowExitAnimation">@anim/alpha_out</item>
+  </style>
+  <style name="DialogSlideAnim">
+    <item name="android:windowAnimationStyle">@style/DialogAnimation</item>
+  </style>
+  <style name="ZeroDialogTheme"/>
+  <style name="AuctionGrabbedOrderLoadingDialog" parent="@android:style/Theme.Dialog">
+    <item name="android:windowBackground">@drawable/dialog_order_grabbed_loading_bg</item>
+    <item name="android:windowFrame">@null</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowIsFloating">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+  </style>
+  <style name="chat_text_date_style">
+    <item name="android:textSize">12.0sp</item>
+    <item name="android:textColor">@color/btn_gray_normal</item>
+    <item name="android:background">@drawable/timestampe_bg</item>
+    <item name="android:padding">2.0dip</item>
+    <item name="android:paddingLeft">12.0dip</item>
+    <item name="android:paddingTop">2.0dip</item>
+    <item name="android:paddingRight">12.0dip</item>
+    <item name="android:paddingBottom">2.0dip</item>
+  </style>
+  <style name="chat_text_name_style">
+    <item name="android:textSize">15.0sp</item>
+    <item name="android:textColor">#ff818181</item>
+    <item name="android:gravity">center</item>
+  </style>
+  <style name="chat_content_date_style">
+    <item name="android:textSize">15.0sp</item>
+    <item name="android:textColor">#ff000000</item>
+    <item name="android:gravity">center</item>
+    <item name="android:background">#ffbfbfbf</item>
+    <item name="android:focusable">true</item>
+    <item name="android:clickable">true</item>
+    <item name="android:minHeight">50.0dip</item>
+    <item name="android:lineSpacingExtra">2.0dip</item>
+  </style>
+  <style name="OrderAddressTextMaxLines">
+    <item name="android:maxLines">2</item>
+  </style>
+  <style name="Theme"/>
+  <style name="Theme.Light" parent="@android:style/Theme.Light"/>
+  <style name="Theme.NoTitle" parent="@style/Theme.Light">
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+  </style>
+  <style name="SampleTheme" parent="@android:style/Theme.Holo">
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+  </style>
+  <style name="SampleTheme.Light" parent="@android:style/Theme.Holo.Light">
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+  </style>
+  <style name="SampleThemeTranslucent.Light" parent="@android:style/Theme.Holo.Light">
+    <item name="android:windowBackground">@android:color/transparent</item>
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowIsTranslucent">true</item>
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="android:windowAnimationStyle">@android:style/Animation</item>
+    <item name="android:colorBackgroundCacheHint">@null</item>
+  </style>
+</resources>

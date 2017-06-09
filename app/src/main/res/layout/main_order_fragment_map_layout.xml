@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+  <SlidingDrawer
+      android:orientation="vertical"
+      android:id="@id/main_order_map_sliding_drawer"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_above="@id/main_order_map_drawer_foot"
+      android:handle="@id/main_order_map_handle"
+      android:content="@id/viewstub_content">
+
+    <RelativeLayout
+        android:gravity="center"
+        android:id="@id/main_order_map_handle"
+        android:background="@color/c_gray_f2f2f2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+      <RelativeLayout
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/order_map_handle_margin_top"
+          android:layout_marginBottom="@dimen/order_map_handle_margin_bottom">
+
+        <ImageView
+            android:id="@id/img_main_order_map_handle_up"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/order_map_handle_up_arrow_margin_bottom"
+            android:layout_centerHorizontal="true"/>
+
+        <TextView
+            android:textSize="@dimen/f_26"
+            android:id="@id/txt_main_order_map_handle"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/main_order_flip_to_show_map"
+            android:layout_below="@id/img_main_order_map_handle_up"
+            style="@style/Button.DeeperGray.Small"/>
+
+        <ImageView
+            android:id="@id/img_main_order_map_handle_down"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/order_map_handle_up_arrow_margin_bottom"
+            android:layout_below="@id/txt_main_order_map_handle"
+            android:layout_centerHorizontal="true"/>
+      </RelativeLayout>
+    </RelativeLayout>
+
+    <include
+        android:id="@id/viewstub_content"
+        layout="@layout/viewstub_order_address_map"/>
+  </SlidingDrawer>
+
+  <ImageView
+      android:id="@id/main_order_map_drawer_foot"
+      android:background="@drawable/order_fragment_map_foot_gray_cover"
+      android:layout_width="fill_parent"
+      android:layout_height="10.0dip"
+      android:layout_alignParentBottom="true"/>
+</RelativeLayout>

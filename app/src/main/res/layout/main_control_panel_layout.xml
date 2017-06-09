@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingBottom="1.0px"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+  <com.uniware.driver.gui.ui.controlpanel.StartOffButton
+      android:id="@id/btn_start_off"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"/>
+
+  <com.uniware.driver.gui.ui.controlpanel.ListeningButton
+      android:id="@id/btn_listening"
+      android:visibility="gone"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"/>
+
+  <com.uniware.driver.gui.ui.controlpanel.GrabForbidButton
+      android:id="@id/btn_count_down"
+      android:visibility="gone"
+      android:clickable="true"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"/>
+
+  <com.uniware.driver.gui.ui.controlpanel.GrabButton
+      android:id="@id/btn_grab"
+      android:visibility="invisible"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_centerInParent="true"/>
+
+  <com.uniware.driver.gui.ui.controlpanel.SettingScaleButton
+      android:id="@id/btn_empty_car"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:visibility="gone"
+      android:layout_alignParentLeft="true"
+      android:layout_centerVertical="true"/>
+
+  <com.uniware.driver.gui.ui.controlpanel.SettingScaleButton
+      android:id="@id/btn_on_board"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:visibility="gone"
+      android:layout_alignParentRight="true"
+      android:layout_centerVertical="true"/>
+</RelativeLayout>

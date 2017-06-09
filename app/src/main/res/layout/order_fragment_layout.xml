@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+  <RelativeLayout
+      android:id="@id/order_fragment_layout"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:layout_above="@id/main_control_panel">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="39.0dip"
+        android:layout_marginLeft="@dimen/new_order_margin_left"
+        android:layout_marginRight="@dimen/new_order_margin_right"
+        android:layout_marginBottom="@dimen/new_order_margin_bottom">
+
+      <ImageView
+          android:id="@id/order_fragment_indicator"
+          android:background="@drawable/order_fragment_indicator"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_alignParentBottom="true"
+          android:layout_centerHorizontal="true"/>
+
+      <com.uniware.driver.gui.fragment.order.OrderTitleView
+          android:id="@id/order_fragment_title"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"/>
+
+      <com.uniware.driver.gui.fragment.order.CommonOrderAddressView
+          android:id="@id/order_fragment_address"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_above="@id/order_fragment_indicator"
+          android:layout_below="@id/order_fragment_title"/>
+
+      <com.uniware.driver.gui.fragment.order.CarpoolOrderAddressView
+          android:id="@id/order_fragment_carpool_address"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_above="@id/order_fragment_indicator"
+          android:layout_below="@id/order_fragment_title"/>
+
+      <TextView
+          android:visibility="gone"
+          android:id="@id/btn_tip_off"
+          android:background="@drawable/tip_off_btn_selector"
+          android:layout_width="@dimen/order_tip_off_width"
+          android:layout_height="@dimen/order_tip_off_height"
+          android:layout_marginRight="@dimen/order_tip_off_margin_right"
+          android:layout_marginBottom="@dimen/order_tip_off_margin_bottom"
+          android:layout_alignParentRight="true"
+          android:layout_alignParentBottom="true"/>
+
+      <com.uniware.driver.gui.fragment.order.OrderMapView
+          android:id="@id/order_fragment_map"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:layout_above="@id/order_fragment_indicator"/>
+
+      <View
+          android:id="@id/view_order_fragment_gray_cover"
+          android:background="@drawable/order_invaild_cover"
+          android:visibility="gone"
+          android:clickable="true"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_above="@id/order_fragment_indicator"
+          android:layout_below="@id/order_fragment_title"/>
+
+      <ImageView
+          android:id="@id/view_order_fragment_cover"
+          android:background="@drawable/order_fragment_map_foot_gray_cover"
+          android:visibility="gone"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:scaleType="fitXY"/>
+
+      <com.uniware.driver.gui.fragment.order.OrderStrivedBriefView
+          android:id="@id/view_order_fragment_strived_brief_cover"
+          android:background="@drawable/order_strive_result_bkg"
+          android:visibility="gone"
+          android:clickable="true"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_above="@id/order_fragment_indicator"
+          android:layout_alignBottom="@id/order_fragment_address"/>
+
+      <com.uniware.driver.gui.fragment.order.OrderStrivedDetailView
+          android:id="@id/view_order_fragment_strived_detail_cover"
+          android:background="@drawable/order_strive_result_bkg"
+          android:visibility="gone"
+          android:clickable="true"
+          android:layout_width="fill_parent"
+          android:layout_height="fill_parent"
+          android:layout_above="@id/order_fragment_indicator"
+          android:layout_alignBottom="@id/order_fragment_address"/>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@id/order_fragment_layout_close"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true">
+
+      <ImageView
+          android:id="@id/order_fragment_img_close"
+          android:background="@drawable/order_fragment_ic_close_instant_normal"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:contentDescription="@null"/>
+    </RelativeLayout>
+  </RelativeLayout>
+
+  <com.uniware.driver.gui.ui.controlpanel.ControlPanel
+      android:id="@id/main_control_panel"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/control_panel_margin_left"
+      android:layout_marginRight="@dimen/control_panel_margin_left"
+      android:layout_marginBottom="@dimen/control_panel_margin_bottom"
+      android:layout_alignParentBottom="true"
+      android:layout_centerHorizontal="true"/>
+</RelativeLayout>

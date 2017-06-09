@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center_vertical"
+    android:orientation="vertical"
+    android:id="@id/llt_navi_sliding_draw"
+    android:background="@color/c_white_ffffffff"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+  <LinearLayout
+      android:gravity="center_vertical"
+      android:orientation="horizontal"
+      android:id="@id/llt_from_1"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/carpool_order_adress_margin_left"
+      android:layout_marginTop="@dimen/order_adress_margin_title"
+      android:layout_marginRight="@dimen/carpool_order_adress_margin_right">
+
+    <ImageView
+        android:layout_gravity="center_vertical"
+        android:id="@id/iv_from_1"
+        android:background="@drawable/go_pick_navigate_from_ic"
+        android:layout_width="@dimen/carpool_order_addr_icon_width_b"
+        android:layout_height="@dimen/carpool_order_addr_icon_height_b"
+        android:layout_marginLeft="1.0dip"
+        android:layout_marginRight="@dimen/carpool_order_addr_icon_margin_right"/>
+
+    <TextView
+        android:textSize="@dimen/f_42"
+        android:textColor="@color/c_gray_333333"
+        android:id="@id/tv_from_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="新中关大厦C停车场北门出口"
+        />
+  </LinearLayout>
+
+  <include
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/carpool_order_point_line_margin_left"
+      layout="@layout/three_points_vertical_line"/>
+
+  <LinearLayout
+      android:gravity="center_vertical"
+      android:orientation="horizontal"
+      android:id="@id/llt_from_2"
+      android:paddingLeft="@dimen/carpool_order_adress_margin_left"
+      android:paddingRight="@dimen/carpool_order_adress_margin_right"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@id/iv_from_2"
+        android:background="@drawable/ico_pass01"
+        android:layout_width="@dimen/carpool_order_addr_icon_width_s"
+        android:layout_height="@dimen/carpool_order_addr_icon_height_s"
+        android:layout_marginLeft="5.0dip"
+        android:layout_marginRight="@dimen/carpool_order_addr_icon_margin_right"/>
+
+    <TextView
+        android:textSize="@dimen/f_32"
+        android:textColor="@color/c_gray_333333"
+        android:id="@id/tv_from_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6.0dip"
+        android:text="新中关大厦C停车场北门出口"
+        android:singleLine="true"/>
+  </LinearLayout>
+
+  <include
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/carpool_order_point_line_margin_left"
+      layout="@layout/three_points_vertical_line"/>
+
+  <LinearLayout
+      android:gravity="center_vertical"
+      android:orientation="horizontal"
+      android:id="@id/llt_to_1"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/carpool_order_adress_margin_left"
+      android:layout_marginRight="@dimen/carpool_order_adress_margin_right">
+
+    <ImageView
+        android:id="@id/iv_to_1"
+        android:background="@drawable/ico_pass02"
+        android:layout_width="@dimen/carpool_order_addr_icon_width_s"
+        android:layout_height="@dimen/carpool_order_addr_icon_height_s"
+        android:layout_marginLeft="5.0dip"
+        android:layout_marginRight="@dimen/carpool_order_addr_icon_margin_right"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"/>
+
+    <TextView
+        android:textSize="@dimen/f_32"
+        android:textColor="@color/c_gray_333333"
+        android:id="@id/tv_to_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="6.0dip"
+        android:text="新中关大厦C停车场北门出口"
+        android:singleLine="true"/>
+  </LinearLayout>
+
+  <include
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/carpool_order_point_line_margin_left"
+      layout="@layout/three_points_vertical_line"/>
+
+  <LinearLayout
+      android:layout_gravity="center_vertical"
+      android:orientation="horizontal"
+      android:id="@id/llt_to_2"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/carpool_order_adress_margin_left"
+      android:layout_marginRight="@dimen/carpool_order_adress_margin_right"
+      android:layout_marginBottom="10.0dip">
+
+    <ImageView
+        android:layout_gravity="center_vertical"
+        android:id="@id/iv_to_2"
+        android:background="@drawable/go_pick_navigate_to_ic"
+        android:layout_width="@dimen/carpool_order_addr_icon_width_b"
+        android:layout_height="@dimen/carpool_order_addr_icon_height_b"
+        android:layout_marginLeft="1.0dip"
+        android:layout_marginRight="@dimen/carpool_order_addr_icon_margin_right"/>
+
+    <TextView
+        android:textSize="@dimen/f_42"
+        android:textColor="@color/c_gray_333333"
+        android:id="@id/tv_to_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="新中关大厦C停车场北门出口"
+        />
+  </LinearLayout>
+
+  <LinearLayout
+      android:layout_gravity="center_vertical"
+      android:orientation="horizontal"
+      android:id="@id/llt_partner_1_extra_info"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/carpool_order_adress_margin_left"
+      android:layout_marginTop="@dimen/order_desc_margin_adress"
+      android:layout_marginRight="@dimen/carpool_order_adress_margin_right">
+
+    <ImageView
+        android:layout_gravity="center_vertical"
+        android:id="@id/iv_partner_1_extra_info_icon"
+        android:background="@drawable/ico_accessory01"
+        android:layout_width="@dimen/carpool_order_extra_info_icon_width"
+        android:layout_height="@dimen/carpool_order_extra_info_icon_height"
+        android:layout_marginLeft="4.0dip"
+        android:layout_marginRight="@dimen/carpool_order_addr_icon_margin_right"/>
+
+    <TextView
+        android:textSize="@dimen/f_32"
+        android:textColor="@color/c_gray_999999"
+        android:id="@id/tv_partner_1_extra_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2.0dip"
+        android:layout_marginRight="46.0dip"
+        android:text="3公里内打表接，打车路程可以计费"
+        android:singleLine="true"/>
+  </LinearLayout>
+
+  <LinearLayout
+      android:gravity="center_vertical"
+      android:orientation="horizontal"
+      android:id="@id/llt_partner_2_extra_info"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginLeft="@dimen/carpool_order_adress_margin_left"
+      android:layout_marginTop="@dimen/order_desc_div_margin"
+      android:layout_marginRight="@dimen/carpool_order_adress_margin_right">
+
+    <ImageView
+        android:id="@id/iv_partner_2_extra_info_icon"
+        android:background="@drawable/ico_accessory02"
+        android:layout_width="@dimen/carpool_order_extra_info_icon_width"
+        android:layout_height="@dimen/carpool_order_extra_info_icon_height"
+        android:layout_marginLeft="4.0dip"
+        android:layout_marginRight="@dimen/carpool_order_addr_icon_margin_right"/>
+
+    <TextView
+        android:textSize="@dimen/f_32"
+        android:textColor="@color/c_gray_999999"
+        android:id="@id/tv_partner_2_extra_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="2.0dip"
+        android:layout_marginRight="46.0dip"
+        android:text="3公里内打表接，打车路程可以计费"
+        android:singleLine="true"/>
+  </LinearLayout>
+</LinearLayout>

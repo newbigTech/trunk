@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@color/c_gray_ecf1f2"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+  <LinearLayout android:gravity="center_horizontal"
+      android:orientation="vertical" android:background="@color/c_gray_ecf1f2"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent">
+  <com.uniware.driver.gui.ui.TitleView android:id="@id/title_view"
+      android:layout_width="fill_parent" android:layout_height="@dimen/title_height_dp"/>
+  <ScrollView android:id="@id/scroll_view" android:layout_width="fill_parent"
+      android:layout_height="wrap_content">
+    <LinearLayout android:gravity="center_horizontal" android:orientation="vertical"
+        android:layout_width="fill_parent" android:layout_height="wrap_content">
+      <ImageView android:layout_width="@dimen/login_logo_height_dp"
+          android:layout_height="@dimen/login_logo_height_dp"
+          android:layout_marginTop="@dimen/login_logo_margin_top_dp" android:src="@drawable/logo"/>
+      <EditText android:id="@id/login_phone_edit"
+          android:layout_marginTop="@dimen/login_logo_margin_top_dp"
+          android:hint="@string/login_phone_number_txt" android:maxLength="11"
+          android:inputType="phone" android:imeOptions="actionNext" style="@style/EditText"/>
+      <EditText android:id="@id/login_pwd_edit"
+          android:layout_marginTop="@dimen/login_edit_margin_top_dp"
+          android:hint="@string/login_passord_txt" android:maxLength="32"
+          android:inputType="textPassword" style="@style/EditText"/>
+      <Button android:id="@id/login_btn" android:layout_marginTop="@dimen/login_edit_margin_top_dp"
+          android:text="@string/login_btn" style="@style/Button.LoginRegister.OrangeBackGround"/>
+    </LinearLayout>
+  </ScrollView>
+  <TextView android:textSize="@dimen/f_30" android:textColor="@color/btn_text_color_selector"
+      android:gravity="right" android:id="@id/login_forget_pwd"
+      android:paddingTop="@dimen/login_edit_margin_top_dp"
+      android:paddingBottom="@dimen/login_logo_margin_top_dp"
+      android:layout_width="@dimen/login_view_width_dp" android:layout_height="wrap_content"
+      android:text="@string/login_forget_pwd_txt" android:clickable="false"/>
+  <LinearLayout android:gravity="center_vertical" android:orientation="horizontal"
+      android:layout_width="@dimen/login_view_width_dp" android:layout_height="wrap_content">
+    <ImageView android:layout_width="@dimen/login_line_width_dp"
+        android:layout_height="@dimen/login_line_height_dp" android:src="@drawable/line"/>
+    <TextView android:textSize="@dimen/f_30" android:textColor="@color/c_gray_888888"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/login_no_account_margin_left_dp"
+        android:layout_marginRight="@dimen/login_no_account_margin_left_dp"
+        android:text="@string/login_have_no_account_txt"/>
+    <ImageView android:layout_width="@dimen/login_line_width_dp"
+        android:layout_height="@dimen/login_line_height_dp" android:src="@drawable/line"/>
+  </LinearLayout>
+  <Button android:id="@id/login_regist_btn"
+      android:layout_marginTop="@dimen/login_regist_margin_top_dp"
+      android:layout_marginBottom="@dimen/login_regist_margin_bottom_dp"
+      android:text="@string/login_register_btn" android:clickable="false"
+      style="@style/Button.LoginRegister.WhiteBackGround.OrangeText"/>
+  </LinearLayout>
+  <TextView
+      android:textSize="14sp"
+      android:text="语音技术由科大讯飞提供"
+      android:layout_alignParentBottom="true"
+      android:layout_centerHorizontal="true"
+      android:paddingBottom="10dp"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+
+</RelativeLayout>

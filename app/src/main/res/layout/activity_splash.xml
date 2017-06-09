@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@drawable/default_splash" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:id="@id/iv_display" android:layout_width="fill_parent" android:layout_height="fill_parent" android:scaleType="fitXY" android:layout_alignParentTop="true" android:layout_centerHorizontal="true" />
+    <ImageView android:id="@id/iv_splash_logo" android:background="@drawable/logo" android:layout_width="111.0dip" android:layout_height="116.0dip" android:layout_marginTop="100.0dip" android:layout_centerHorizontal="true" />
+    <TextView android:textSize="@dimen/font_size_ld_dp" android:textColor="@color/c_orange_ffbd66" android:id="@id/tv_version" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="5.0dip" android:layout_marginBottom="30.0dip" android:text="@string/copyright" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" />
+</RelativeLayout>

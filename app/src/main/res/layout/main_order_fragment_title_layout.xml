@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/rlt_content"
+    android:background="@color/c_red_ff0000"
+    android:layout_width="fill_parent"
+    android:layout_height="@dimen/order_title_height">
+
+  <RelativeLayout
+      android:id="@id/layout_order_valid"
+      android:visibility="visible"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_centerInParent="true">
+
+    <ImageView
+        android:id="@id/img_trip_type"
+        android:background="@drawable/order_fragment_type_instant"
+        android:layout_width="40.0dip"
+        android:layout_height="40.0dip"
+        style="@style/ImageView"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15.0dip"
+        android:layout_marginRight="15.0dip"
+        android:layout_centerInParent="true">
+
+      <TextView
+          android:textSize="@dimen/f_64"
+          android:gravity="center_horizontal"
+          android:id="@id/txt_valid_title"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:text="距离20.5公里，增收1000元"
+          style="@style/TextView.White.XXXXLarge"/>
+
+      <TextView
+          android:textSize="@dimen/f_32"
+          android:layout_gravity="center_horizontal"
+          android:id="@id/txt_valid_text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/main_order_order_tip"
+          style="@style/TextView.White.Large.Translucent_75"/>
+    </LinearLayout>
+  </RelativeLayout>
+
+  <RelativeLayout
+      android:id="@id/layout_order_invalid"
+      android:visibility="gone"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"
+      android:layout_centerInParent="true">
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+      <TextView
+          android:textSize="@dimen/f_52"
+          android:gravity="center_horizontal"
+          android:id="@id/txt_invalid_title"
+          android:layout_width="fill_parent"
+          android:layout_height="wrap_content"
+          android:text="@string/main_order_order_grabed"
+          style="@style/TextView.White.XXXXLarge"/>
+
+      <TextView
+          android:textSize="@dimen/f_32"
+          android:id="@id/txt_invalid_text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="5.0dip"
+          android:text="乘客2拒绝拼车"
+          style="@style/TextView.White.Large.Translucent_75"/>
+    </LinearLayout>
+  </RelativeLayout>
+</RelativeLayout>

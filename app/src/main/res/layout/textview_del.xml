@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@id/textview_del_main"
+    android:background="@drawable/mode_advanced_setting_input_bkg"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+  <TextView android:textSize="@dimen/font_size_medium"
+      android:textColor="@color/c_white_99ffffff" android:id="@id/textview_del_text"
+      android:background="@color/c_transparent_00000000" android:clickable="true"
+      android:layout_width="wrap_content" android:layout_height="wrap_content"
+      android:layout_marginLeft="7.0dip" android:layout_marginTop="15.0dip"
+      android:layout_marginBottom="15.0dip"
+      android:text="@string/mode_addvanced_setting_async_time_start" android:singleLine="true"
+      android:layout_centerVertical="true"/>
+  <ImageButton android:id="@id/textview_del_del"
+      android:background="@drawable/left_text_and_right_btn_img" android:layout_width="37.0dip"
+      android:layout_height="35.0dip" android:scaleType="centerInside"
+      android:layout_alignParentRight="true" android:layout_centerVertical="true"/>
+</RelativeLayout>

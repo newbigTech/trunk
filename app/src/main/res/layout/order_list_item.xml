@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/main_announce_padding_left"
+    android:paddingTop="@dimen/main_announce_list_item_padding_top"
+    android:paddingRight="@dimen/main_announce_padding_right"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+  <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+    <TextView android:textSize="@dimen/f_42" android:textColor="@color/text_color_white"
+        android:id="@id/txt_title" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:singleLine="true"
+        android:layout_alignWithParentIfMissing="true"/>
+    <TextView
+        android:layout_below="@id/txt_title"
+        android:layout_marginTop="5.0dip"
+        android:textSize="@dimen/f_30" android:textColor="@color/text_color_white"
+        android:id="@+id/txt_usetime" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:singleLine="true"
+        android:layout_alignWithParentIfMissing="true"/>
+    <ImageView android:id="@id/iv_carpool_icon" android:background="@drawable/carpool_icon"
+        android:visibility="gone" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginLeft="3.0dip"
+        android:layout_marginTop="5.0dip" android:layout_toRightOf="@id/txt_title"/>
+    <TextView android:textSize="@dimen/f_30" android:textColor="@color/text_color_white"
+        android:ellipsize="end" android:id="@id/tip_bonus" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginLeft="7.0dip"
+        android:layout_marginTop="5.0dip" android:maxEms="8" android:singleLine="true"
+        android:layout_alignParentRight="true"/>
+  </RelativeLayout>
+  <RelativeLayout android:id="@id/order_frame" android:layout_width="fill_parent"
+      android:layout_height="wrap_content" android:layout_marginTop="10.0dip">
+    <ImageView android:id="@id/ic_order_from" android:layout_width="13.0dip"
+        android:layout_height="17.0dip" android:layout_marginTop="2.0dip"
+        android:src="@drawable/common_ic_address_from"/>
+    <TextView android:textSize="@dimen/f_30" android:textColor="@color/text_color_white"
+        android:ellipsize="end" android:id="@id/txt_order_from" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginLeft="9.0dip"
+        android:layout_marginTop="1.0dip" android:layout_marginRight="63.0dip"
+        android:singleLine="true" android:layout_toRightOf="@id/ic_order_from"/>
+    <ImageView android:id="@id/ic_order_to" android:layout_width="13.0dip"
+        android:layout_height="17.0dip" android:layout_marginTop="12.0dip"
+        android:src="@drawable/common_ic_address_to"
+        android:layout_below="@id/ic_order_from"/>
+    <TextView android:textSize="@dimen/f_30" android:textColor="@color/text_color_white"
+        android:ellipsize="end" android:id="@id/txt_order_to" android:layout_width="wrap_content"
+        android:layout_height="wrap_content" android:layout_marginLeft="9.0dip"
+        android:layout_marginTop="8.0dip" android:layout_marginRight="63.0dip"
+        android:singleLine="true" android:layout_toRightOf="@id/ic_order_to"
+        android:layout_below="@id/txt_order_from"/>
+    <TextView android:textSize="@dimen/f_24" android:textColor="@color/c_white_ffffffff"
+        android:gravity="center" android:id="@id/im_unread_msg_cnt_badge"
+        android:background="@drawable/im_remind_bg" android:visibility="gone"
+        android:layout_width="@dimen/im_btn_unread_msg_bg_side"
+        android:layout_height="@dimen/im_btn_unread_msg_bg_side" android:layout_marginTop="15.0dip"
+        android:text="1" android:ems="1" android:singleLine="true"
+        android:layout_alignTop="@id/ic_order_from" android:layout_alignParentRight="true"/>
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+        android:layout_marginTop="5.0dip" android:layout_below="@id/txt_order_to">
+      <TextView android:textSize="@dimen/f_30" android:textColor="@color/text_color_yellow"
+          android:ellipsize="end" android:id="@id/comment_status"
+          android:layout_width="wrap_content" android:layout_height="wrap_content"
+          android:singleLine="true" android:layout_alignParentLeft="true"
+          android:layout_centerVertical="true"/>
+      <!--<com.sdu.didi.ui.FiveStar android:id="@id/comment_level" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />-->
+    </RelativeLayout>
+  </RelativeLayout>
+  <ImageView android:layout_gravity="bottom" android:id="@id/title_iv_divider"
+      android:layout_width="fill_parent" android:layout_height="1.0px"
+      android:layout_marginTop="17.0dip" android:src="@color/list_divider"/>
+</LinearLayout>

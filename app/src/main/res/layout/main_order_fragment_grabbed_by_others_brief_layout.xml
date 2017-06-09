@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="fill_parent"
+      android:layout_height="wrap_content">
+
+    <ImageView
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/order_grabbed_bg"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/img_height_main_order_fragment_grabbed_by_others_vs_title_top_img"/>
+
+    <TextView
+        android:textSize="@dimen/txt_size_main_order_fragment_grabbed_by_brief_others_title"
+        android:textColor="@color/txt_color_main_order_fragment_grabbed_by_others_red"
+        android:layout_gravity="center_horizontal"
+        android:id="@id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/order_strive_result_brief_title_margin_top"
+        android:text="@string/order_grabbed_by_others_title"/>
+
+    <TextView
+        android:textSize="@dimen/txt_size_main_order_fragment_grabbed_by_brief_others_title_explain"
+        android:textColor="@color/txt_color_main_order_fragment_grabbed_by_others_red"
+        android:layout_gravity="center_horizontal"
+        android:id="@id/tv_title_explain"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="-3.0dip"
+        android:text="@string/order_grabbed_by_others_title_explain"/>
+  </LinearLayout>
+
+  <LinearLayout
+      android:orientation="horizontal"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="3.1">
+
+      <com.uniware.driver.gui.ui.CircleImageView
+          xmlns:app="http://schemas.android.com/apk/res-auto"
+          android:layout_gravity="center_horizontal"
+          android:id="@id/civ_my_photo"
+          android:layout_width="@dimen/img_size_top_main_order_fragment_grabbed_by_others_vs_photo_circle_d"
+          android:layout_height="@dimen/img_size_top_main_order_fragment_grabbed_by_others_vs_photo_circle_d"
+          android:layout_marginTop="@dimen/order_grab_result_brief_avatar_margin_top"
+          android:src="@drawable/main_driver_photo"
+          app:civ_border_width="3.0dip"
+          app:civ_border_color="#ffff0000"/>
+
+      <TextView
+          android:textSize="@dimen/f_28"
+          android:textColor="@color/txt_color_main_order_fragment_grabbed_by_others_gray"
+          android:layout_gravity="center_horizontal"
+          android:id="@id/txt_order_grabbed_by_others_vs_my_name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/margin_top_main_order_fragment_grabbed_by_others_brief_vs_avatar_name"
+          android:text="@string/order_grabbed_by_others_vs_my_name"/>
+
+      <TextView
+          android:textSize="@dimen/font_size_ld_dp"
+          android:textColor="@color/txt_color_main_order_fragment_grabbed_by_others_gray"
+          android:layout_gravity="center_horizontal"
+          android:id="@id/tv_my_comment"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/margin_top_main_order_fragment_grabbed_by_others_brief_vs_info_name"
+          android:text="@string/order_grabbed_by_others_vs_my_comment"/>
+
+      <TextView
+          android:textSize="@dimen/f_74"
+          android:textColor="@color/txt_color_main_order_fragment_grabbed_by_others_gray"
+          android:layout_gravity="center_horizontal"
+          android:id="@id/tv_my_total_result"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/margin_top_main_order_fragment_grabbed_by_others_vs_people_result"
+          android:text="@string/order_grabbed_by_others_vs_my_total_result"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="4.0">
+
+      <TextView
+          android:textSize="@dimen/f_28"
+          android:textColor="@color/txt_color_main_order_fragment_grabbed_by_others_gray"
+          android:layout_gravity="center_horizontal"
+          android:visibility="visible"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/order_grab_result_brief_avatar_compare_margin_top"
+          android:text="@string/order_grabbed_by_others_vs_name"/>
+
+      <TextView
+          android:textSize="@dimen/f_28"
+          android:textColor="@color/txt_color_main_order_fragment_grabbed_by_others_gray"
+          android:layout_gravity="center_horizontal"
+          android:id="@id/tv_total_result"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/order_grab_result_brief_distance_compare_margin_top"
+          android:text="@string/order_grabbed_by_others_vs_distance"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_weight="3.1">
+
+      <com.uniware.driver.gui.ui.CircleImageView
+          xmlns:app="http://schemas.android.com/apk/res-auto"
+          android:layout_gravity="center_horizontal"
+          android:id="@id/civ_his_photo"
+          android:layout_width="@dimen/img_size_top_main_order_fragment_grabbed_by_others_vs_photo_circle_d"
+          android:layout_height="@dimen/img_size_top_main_order_fragment_grabbed_by_others_vs_photo_circle_d"
+          android:layout_marginTop="@dimen/order_grab_result_brief_avatar_margin_top"
+          android:src="@drawable/main_driver_photo"
+          app:civ_border_width="3.0dip"
+          app:civ_border_color="#ffff0000"/>
+
+      <TextView
+          android:textSize="@dimen/f_28"
+          android:textColor="@color/txt_color_main_order_fragment_grabbed_by_others_gray"
+          android:layout_gravity="center_horizontal"
+          android:id="@id/tv_his_name"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/margin_top_main_order_fragment_grabbed_by_others_brief_vs_avatar_name"
+          android:text="@string/order_grabbed_by_others_vs_his_name"/>
+
+      <TextView
+          android:textSize="@dimen/font_size_ld_dp"
+          android:textColor="@color/txt_color_main_order_fragment_grabbed_by_others_gray"
+          android:layout_gravity="center_horizontal"
+          android:id="@id/tv_his_comment"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/margin_top_main_order_fragment_grabbed_by_others_brief_vs_info_name"
+          android:text="@string/order_grabbed_by_others_vs_his_comment"/>
+
+      <TextView
+          android:textSize="@dimen/f_74"
+          android:textColor="@color/txt_color_main_order_fragment_grabbed_by_others_red"
+          android:layout_gravity="center_horizontal"
+          android:id="@id/tv_his_total_result"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/margin_top_main_order_fragment_grabbed_by_others_vs_people_result"
+          android:text="@string/order_grabbed_by_others_vs_his_total_result"/>
+
+      <TextView
+          android:layout_gravity="right"
+          android:id="@id/tv_strived_tip_off"
+          android:background="@drawable/tip_off_btn_selector"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/order_strive_result_brief_tip_off_margin_top"
+          android:layout_marginRight="20.0dip"/>
+    </LinearLayout>
+  </LinearLayout>
+</LinearLayout>

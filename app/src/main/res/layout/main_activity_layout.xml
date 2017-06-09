@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+  <ImageView android:id="@id/main_background" android:layout_width="match_parent"
+      android:layout_height="match_parent" android:src="@drawable/common_bg_night"
+      android:scaleType="fitXY"/>
+  <com.uniware.driver.gui.ui.MainView android:id="@id/main_view" android:layout_width="fill_parent"
+      android:layout_height="fill_parent"/>
+  <fragment android:name="com.uniware.driver.gui.fragment.order.OrderFragment"
+      android:id="@id/main_order_fragment"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent"/>
+  <RelativeLayout android:id="@id/main_user_edu_layout" android:layout_width="fill_parent"
+      android:layout_height="fill_parent">
+    <ImageView android:id="@id/main_user_edu_image" android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+  </RelativeLayout>
+</RelativeLayout>
