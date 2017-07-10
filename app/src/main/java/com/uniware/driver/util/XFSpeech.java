@@ -13,7 +13,7 @@ import com.iflytek.cloud.SynthesizerListener;
 import javax.inject.Inject;
 
 /**
- * Created by jian on 15/12/16.
+ * XFSpeech 讯飞语音
  */
 public class XFSpeech {
   // 语音合成对象

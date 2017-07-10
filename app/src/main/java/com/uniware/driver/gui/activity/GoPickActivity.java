@@ -1,19 +1,22 @@
 package com.uniware.driver.gui.activity;
 
 import android.Manifest;
+import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Message;
 import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 import butterknife.Bind;
@@ -40,6 +43,7 @@ import com.uniware.driver.util.LogUtils;
 import com.uniware.driver.util.ToastUtil;
 import com.uniware.driver.util.XFSpeech;
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import javax.inject.Inject;
 
@@ -47,9 +51,14 @@ import javax.inject.Inject;
  * Created by jian on 16/04/21.
  */
 public class GoPickActivity extends OrderPopActivity implements GoPickView {
-
+  public static List<Activity> activityList = new LinkedList<Activity>();
   private static final String INTENT_EXTRA_PARAM_ORDER = "com.uniware.driver.INTENT_PARAM_ORDER";
   private static final String INSTANCE_STATE_PARAM_ORDER = "com.uniware.driver.STATE_PARAM_ORDER";
+
+  public static final String ROUTE_PLAN_NODE = "routePlanNode";
+  public static final String SHOW_CUSTOM_ITEM = "showCustomItem";
+  public static final String RESET_END_NODE = "resetEndNode";
+  public static final String VOID_MODE = "voidMode";
 
   private static final int MSG_SHOW = 1;
   private static final int MSG_HIDE = 2;
@@ -59,12 +68,14 @@ public class GoPickActivity extends OrderPopActivity implements GoPickView {
   BNRoutePlanNode sNode;
   BNRoutePlanNode mNode;
   BNRoutePlanNode eNode;
+  @Bind(R.id.btn_go_guid) Button btnGoGuid;
   private BNRoutePlanNode mBNRoutePlanNode = null;
   private BaiduNaviCommonModule mBaiduNaviCommonModule = null;
   private Handler hd = null;
+  private boolean guid=true;
 
   private Order order;
-  private int isssue=1;
+  private int isssue = 1;
   private XFSpeech speech;
   @Inject GoPickPresenter goPickPresenter;
   @Inject DriverLocation driverLocation;
@@ -95,10 +106,10 @@ public class GoPickActivity extends OrderPopActivity implements GoPickView {
     startActivity(intent);
   }
 
-  public static Intent getCallingIntent(Context context, Order order,int i) {
+  public static Intent getCallingIntent(Context context, Order order, int i) {
     Intent callingIntent = new Intent(context, GoPickActivity.class);
     callingIntent.putExtra(INTENT_EXTRA_PARAM_ORDER, order);
-    callingIntent.putExtra("issue",i);
+    callingIntent.putExtra("issue", i);
     return callingIntent;
   }
 
@@ -108,10 +119,10 @@ public class GoPickActivity extends OrderPopActivity implements GoPickView {
     ButterKnife.bind(this);
     this.initializeInjector();
     this.initializeActivity(savedInstanceState);
-    speech=new XFSpeech(this);
+    speech = new XFSpeech(this);
     goPickPresenter.setGoPickView(this);
-    if (!order.getDescription().equals("")&&!order.getDescription().equals("无")){
-       tvDesc.setVisibility(View.VISIBLE);
+    if (!order.getDescription().equals("") && !order.getDescription().equals("无")) {
+      tvDesc.setVisibility(View.VISIBLE);
       tvDesc.setText(order.getDescription());
     }
     //routePlanToNavi(BNRoutePlanNode.CoordinateType.GCJ02);
@@ -119,16 +130,56 @@ public class GoPickActivity extends OrderPopActivity implements GoPickView {
       order.setStatus(Order.STATUS_GO_PICK);
     }
     updateUI();
-    if (isssue!=0){
+    btnGoGuid.setOnClickListener(new View.OnClickListener() {
+      @Override public void onClick(View v) {
+        if (!AppApplication.isNavUtil) {
+          new AlertDialog.Builder(GoPickActivity.this).setTitle("系统提示")//设置对话框标题
+              .setMessage("请确认是否使用导航")//设置显示的内容
+              .setPositiveButton("确定", new DialogInterface.OnClickListener() {//添加确定按钮
+                @Override public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
+                  // TODO Auto-generated method stub
+                  Intent i1 = new Intent();
+                  // 驾车导航
+                  i1.setData(Uri.parse("baidumap://map/navi?query=" + order.getToAddr()));
+                  startActivity(i1);
+                  finish();
+                }
+              }).setNegativeButton("返回", new DialogInterface.OnClickListener() {//添加返回按钮
+            @Override public void onClick(DialogInterface dialog, int which) {//响应事件
+              // TODO Auto-generated method stub
+              Log.i("alertdialog", " 请保存数据！");
+            }
+          }).show();//在按键响应事件中显示此对话框
+          return;
+        }
+        if (guid){
+          navi2destination();
+        }
+        else {
+          sNode = new BNRoutePlanNode(driverLocation.getLocation().getLongitude(),
+              driverLocation.getLocation().getLatitude(), "", null,
+              BNRoutePlanNode.CoordinateType.BD09LL);
+          //mNode = new BNRoutePlanNode(order.getFromLng(), order.getFromLat(), order.getFromAddr(), null,
+          //    BNRoutePlanNode.CoordinateType.BD09LL);
+          eNode = new BNRoutePlanNode(order.getToLng(), order.getToLat(), order.getToAddr(), null,
+              BNRoutePlanNode.CoordinateType.BD09LL);
+          list.clear();
+          list.add(sNode);
+          list.add(eNode);
+          BaiduNaviManager.getInstance()
+              .launchNavigator(GoPickActivity.this, list, 1, true, new NaviRoutePlanListener(sNode));
+          mBNRoutePlanNode = sNode;
+        }
+      }
+    });
+    if (isssue != 0) {
       //使用通用接口
       mBaiduNaviCommonModule = NaviModuleFactory.getNaviModuleManager()
           .getNaviCommonModule(NaviModuleImpl.BNaviCommonModuleConstants.ROUTE_GUIDE_MODULE, this,
               BNaviBaseCallbackModel.BNaviBaseCallbackConstants.CALLBACK_ROUTEGUIDE_TYPE,
               mOnNavigationListener);
-
-      createHandler();
-      navi2destination();
-    }else {
+      //createHandler();
+    } else {
       speech.ttsSpeaking(getString(R.string.yuyue_text));
       new Thread(new Runnable() {
         @Override public void run() {
@@ -136,11 +187,10 @@ public class GoPickActivity extends OrderPopActivity implements GoPickView {
             Thread.sleep(1000);
             runOnUiThread(new Runnable() {
               @Override public void run() {
-                new android.app.AlertDialog.Builder(GoPickActivity.this).setTitle("系统提示")//设置对话框标题
+                new AlertDialog.Builder(GoPickActivity.this).setTitle("系统提示")//设置对话框标题
                     .setMessage(getResources().getString(R.string.yuyue_text))//设置显示的内容
-                    .setPositiveButton("确定",new DialogInterface.OnClickListener() {//添加确定按钮
-                      @Override
-                      public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
+                    .setPositiveButton("确定", new DialogInterface.OnClickListener() {//添加确定按钮
+                      @Override public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
                         // TODO Auto-generated method stub
                         finish();
                       }
@@ -153,27 +203,7 @@ public class GoPickActivity extends OrderPopActivity implements GoPickView {
         }
       }).start();
     }
-    if (!AppApplication.isNavUtil){
-      new android.app.AlertDialog.Builder(GoPickActivity.this).setTitle("系统提示")//设置对话框标题
-          .setMessage("请确认是否使用导航")//设置显示的内容
-          .setPositiveButton("确定",new DialogInterface.OnClickListener() {//添加确定按钮
-            @Override
-            public void onClick(DialogInterface dialog, int which) {//确定按钮的响应事件
-              // TODO Auto-generated method stub
-              Intent i1 = new Intent();
-              // 驾车导航
-              i1.setData(Uri.parse("baidumap://map/navi?query="+order.getToAddr()));
-              startActivity(i1);
-              finish();
-            }
-          }).setNegativeButton("返回",new DialogInterface.OnClickListener() {//添加返回按钮
-        @Override
-        public void onClick(DialogInterface dialog, int which) {//响应事件
-          // TODO Auto-generated method stub
-          Log.i("alertdialog"," 请保存数据！");
-        }
-      }).show();//在按键响应事件中显示此对话框
-    }
+
   }
 
   @Override protected void onResume() {
@@ -223,7 +253,7 @@ public class GoPickActivity extends OrderPopActivity implements GoPickView {
     super.onSaveInstanceState(outState);
   }
 
-  public void onConfigurationChanged(android.content.res.Configuration newConfig) {
+  public void onConfigurationChanged(Configuration newConfig) {
     super.onConfigurationChanged(newConfig);
     if (mBaiduNaviCommonModule != null) {
       mBaiduNaviCommonModule.onConfigurationChanged(newConfig);
@@ -236,10 +266,10 @@ public class GoPickActivity extends OrderPopActivity implements GoPickView {
   private void initializeActivity(Bundle savedInstanceState) {
     if (savedInstanceState == null) {
       this.order = (Order) getIntent().getSerializableExtra(INTENT_EXTRA_PARAM_ORDER);
-      this.isssue=getIntent().getIntExtra("issue",1);
+      this.isssue = getIntent().getIntExtra("issue", 1);
     } else {
       this.order = (Order) savedInstanceState.getSerializable(INTENT_EXTRA_PARAM_ORDER);
-      this.isssue=savedInstanceState.getInt("issue",1);
+      this.isssue = savedInstanceState.getInt("issue", 1);
     }
   }
 
@@ -277,23 +307,11 @@ public class GoPickActivity extends OrderPopActivity implements GoPickView {
             }
           }, new View.OnClickListener() {
             @Override public void onClick(View v) {
-             // goPickPresenter.cancelOrder(order.getOid());
+              // goPickPresenter.cancelOrder(order.getOid());
               //BNRouteGuideManager.getInstance().forceQuitNaviWithoutDialog();
             }
           });
-      //BNRouteGuideManager.getInstance().resetEndNodeInNavi(eNode);
-      sNode = new BNRoutePlanNode(driverLocation.getLocation().getLongitude(),
-          driverLocation.getLocation().getLatitude(), "", null, BNRoutePlanNode.CoordinateType.WGS84);
-      //mNode = new BNRoutePlanNode(order.getFromLng(), order.getFromLat(), order.getFromAddr(), null,
-      //    BNRoutePlanNode.CoordinateType.BD09LL);
-      eNode = new BNRoutePlanNode(order.getToLng(), order.getToLat(), order.getToAddr(), null,
-          BNRoutePlanNode.CoordinateType.WGS84);
-      list.clear();
-      list.add(sNode);
-      list.add(eNode);
-      BaiduNaviManager.getInstance()
-          .launchNavigator(this, list, 1, true, new NaviRoutePlanListener());
-      mBNRoutePlanNode = sNode;
+      guid=false;
       btnGoPick.setText(R.string.btn_in_place_psnger);
     } else if (order.getStatus() == Order.STATUS_DRIVING) {
       titleView.setTitle(getString(R.string.title_go_pick_driving), new View.OnClickListener() {
@@ -330,39 +348,50 @@ public class GoPickActivity extends OrderPopActivity implements GoPickView {
 
     //BNRoutePlanNode eNode;
     sNode = new BNRoutePlanNode(driverLocation.getLocation().getLongitude(),
-        driverLocation.getLocation().getLatitude(), "", null, BNRoutePlanNode.CoordinateType.WGS84);
+        driverLocation.getLocation().getLatitude(), "", null,
+        BNRoutePlanNode.CoordinateType.BD09LL);
     mNode = new BNRoutePlanNode(order.getFromLng(), order.getFromLat(), order.getFromAddr(), null,
         BNRoutePlanNode.CoordinateType.BD09LL);
     eNode = new BNRoutePlanNode(order.getToLng(), order.getToLat(), order.getToAddr(), null,
-        BNRoutePlanNode.CoordinateType.WGS84);
+        BNRoutePlanNode.CoordinateType.BD09LL);
 
     list.add(sNode);
     list.add(mNode);
-    list.add(eNode);
+    //list.add(eNode);
     BaiduNaviManager.getInstance()
-        .launchNavigator(this, list, 1, true, new NaviRoutePlanListener());
+        .launchNavigator(this, list, 1, true, new NaviRoutePlanListener(sNode));
     mBNRoutePlanNode = sNode;
   }
 
   public class NaviRoutePlanListener implements BaiduNaviManager.RoutePlanListener {
+    private BNRoutePlanNode mBNRoutePlanNode = null;
+
+    public NaviRoutePlanListener(BNRoutePlanNode node) {
+      mBNRoutePlanNode = node;
+    }
 
     @Override public void onJumpToNavigator() {
       //设置途径点以及resetEndNode会回调该接口
-      Toast.makeText(GoPickActivity.this, "开始导航", Toast.LENGTH_SHORT).show();
-      if (mBaiduNaviCommonModule != null) {
-        mBaiduNaviCommonModule.onCreate();
-        View view = mBaiduNaviCommonModule.getView();
-        if (view != null) {
-          FrameLayout frameLayout = (FrameLayout) view;
-          frameLayout.removeViewAt(1);
-          FrameLayout map = (FrameLayout) findViewById(R.id.go_pick_navi_map);
-          map.removeAllViews();
-          map.addView(view);
-        }
-      }
-      if (hd != null) {
-        hd.sendEmptyMessageAtTime(MSG_SHOW, 2000);
-      }
+      //Toast.makeText(GoPickActivity.this, "开始导航", Toast.LENGTH_SHORT).show();
+      //if (mBaiduNaviCommonModule != null) {
+      //  mBaiduNaviCommonModule.onCreate();
+      //  View view = mBaiduNaviCommonModule.getView();
+      //  if (view != null) {
+      //    FrameLayout frameLayout = (FrameLayout) view;
+      //    frameLayout.removeViewAt(1);
+      //    FrameLayout map = (FrameLayout) findViewById(R.id.go_pick_navi_map);
+      //    map.removeAllViews();
+      //    map.addView(view);
+      //  }
+      //}
+      //if (hd != null) {
+      //  hd.sendEmptyMessageAtTime(MSG_SHOW, 2000);
+      //}
+      Intent intent = new Intent(GoPickActivity.this, BNDemoGuideActivity.class);
+      Bundle bundle = new Bundle();
+      bundle.putSerializable(ROUTE_PLAN_NODE, (BNRoutePlanNode) mBNRoutePlanNode);
+      intent.putExtras(bundle);
+      startActivity(intent);
     }
 
     @Override public void onRoutePlanFailed() {
@@ -389,7 +418,7 @@ public class GoPickActivity extends OrderPopActivity implements GoPickView {
   private void createHandler() {
     if (hd == null) {
       hd = new Handler(getMainLooper()) {
-        public void handleMessage(android.os.Message msg) {
+        public void handleMessage(Message msg) {
           if (msg.what == MSG_SHOW) {
             //addCustomizedLayerItems();
           } else if (msg.what == MSG_HIDE) {

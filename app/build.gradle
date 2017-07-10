@@ -20,8 +20,8 @@ android {
     applicationId "com.uniware.driver"
     minSdkVersion 15
     targetSdkVersion 22
-    versionCode 12
-    versionName "1.10.00"
+    versionCode 13
+    versionName "1.11.00"
     manifestPlaceholders = [GETUI_APP_ID    : "NB4dA5ONuVA32o9RWh4yE9",
                             GETUI_APP_KEY   : "DaetpMcci26TV02a4CJ1W",
                             GETUI_APP_SECRET: "vJYcsVbeSl5ugTE9IuRip9",
@@ -84,6 +84,18 @@ android {
     exclude 'META-INF/BenchmarkList'
     exclude 'META-INF/io.netty.versions.properties'
     exclude 'META-INF/CompilerHints'
+  }
+  dexOptions {
+    //使用增量模式构建
+    incremental true
+    //最大堆内存
+    javaMaxHeapSize "8g"
+    //是否支持大工程模式
+    jumboMode = true
+    //预编译
+    preDexLibraries = true
+    //线程数
+    threadCount = 8
   }
 }
 

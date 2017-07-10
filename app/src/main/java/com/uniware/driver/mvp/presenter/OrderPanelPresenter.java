@@ -263,23 +263,8 @@ public class OrderPanelPresenter implements Presenter {
         //xfSpeech.ttsSpeaking(order.buildTtsStr());
         orderModel = new OrderModel(order);
         countdown.unsubscribe();
-        //xfSpeech.setCompleteListener(new XFSpeech.Complete() {
-        //  @Override public void complete() {
-        //    if (!isClick&&!isCancel){
-        //      countdown.execute(new CountdownSubscriber(8));
-        //    }
-        //    else if (isCancel){
-        //      isCancel=false;
-        //    }
-        //  }
-        //});
         controlPanelView.showOrderView(order);
         countdown.execute(new CountdownSubscriber(12));
-
-        //if (isSshow){
-          //controlPanelView.showGrabBtn(8);
-         // isSshow=false;
-       // }
         LogUtils.e(this, "有新订单了~");
       } else if (biz instanceof StriveStatus) {
         StriveStatus striveStatus = (StriveStatus) biz;

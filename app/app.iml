@@ -122,8 +122,8 @@
     <orderEntry type="library" exported="" name="support-v4-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="jsr250-api-1.0" level="project" />
     <orderEntry type="library" exported="" name="BaiduLBS_Android" level="project" />
-    <orderEntry type="library" exported="" name="slf4j-api-1.7.6" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-23.1.1" level="project" />
+    <orderEntry type="library" exported="" name="slf4j-api-1.7.6" level="project" />
     <orderEntry type="library" exported="" name="Msc" level="project" />
     <orderEntry type="library" exported="" name="appcompat-v7-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="converter-gson-2.0.0-beta2" level="project" />
@@ -133,12 +133,12 @@
     <orderEntry type="library" exported="" name="rxnetty-tcp-0.5.2-RC1" level="project" />
     <orderEntry type="library" exported="" name="sdk-2.9.0.0" level="project" />
     <orderEntry type="library" exported="" name="retrofit-2.0.0-beta2" level="project" />
-    <orderEntry type="library" exported="" name="adapter-rxjava-2.0.0-beta2" level="project" />
     <orderEntry type="library" exported="" name="analytics-6.1.1" level="project" />
+    <orderEntry type="library" exported="" name="adapter-rxjava-2.0.0-beta2" level="project" />
     <orderEntry type="library" exported="" name="javax.inject-1" level="project" />
     <orderEntry type="library" exported="" name="rxandroid-1.1.0" level="project" />
-    <orderEntry type="library" exported="" name="rxjava-1.1.1" level="project" />
     <orderEntry type="library" exported="" name="netty-transport-4.1.0.Beta7" level="project" />
+    <orderEntry type="library" exported="" name="rxjava-1.1.1" level="project" />
     <orderEntry type="library" exported="" name="design-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="netty-codec-4.1.0.Beta7" level="project" />
     <orderEntry type="library" exported="" name="netty-transport-native-epoll-4.1.0.Beta7" level="project" />

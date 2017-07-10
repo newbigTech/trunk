@@ -28,6 +28,11 @@
   <LinearLayout android:gravity="center_horizontal" android:orientation="vertical"
       android:layout_width="fill_parent" android:layout_height="wrap_content"
       android:layout_alignParentBottom="true">
+    <Button android:id="@+id/btn_go_guid" android:layout_width="fill_parent"
+        android:layout_height="46.0dip" android:layout_marginLeft="12.0dip"
+        android:layout_marginRight="12.0dip" android:layout_marginBottom="12.0dip"
+        android:text="使用导航"
+        style="@style/Button.LoginRegister.OrangeBackGround"/>
     <Button android:id="@id/btn_go_pick" android:layout_width="fill_parent"
         android:layout_height="46.0dip" android:layout_marginLeft="12.0dip"
         android:layout_marginRight="12.0dip" android:layout_marginBottom="12.0dip"

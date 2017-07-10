@@ -130,6 +130,12 @@
         >
     </activity>
     <activity
+        android:name=".gui.activity.BNDemoGuideActivity"
+        android:screenOrientation="portrait"
+        android:theme="@style/Theme.NoTitle"
+    >
+    </activity>
+    <activity
         android:name=".gui.activity.MainActivity"
         android:launchMode="singleTask"
         android:screenOrientation="portrait"
