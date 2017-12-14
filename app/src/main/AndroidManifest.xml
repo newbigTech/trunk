@@ -8,17 +8,18 @@
       android:normalScreens="false"
       android:resizeable="true"
       android:smallScreens="true"/>
-  <uses-permission android:name="android.permission.WAKE_LOCK" />
-  <uses-permission android:name="android.permission.DISABLE_KEYGUARD" />
+
+  <uses-permission android:name="android.permission.WAKE_LOCK"/>
+  <uses-permission android:name="android.permission.DISABLE_KEYGUARD"/>
   <!-- 网络连接状态权限 -->
   <uses-permission android:name="android.permission.INTERNET"/>
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
   <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
   <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
   <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
-  <!--Allows read only access to phone state.-->
+  <!-- Allows read only access to phone state. -->
   <uses-permission android:name="android.permission.READ_PHONE_STATE"/>
-  <!--拨号-->
+  <!-- 拨号 -->
   <uses-permission android:name="android.permission.CALL_PHONE"/>
   <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"/>
   <!-- 修改全局系统设置 -->
@@ -26,6 +27,7 @@
   <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS"/>
 
   <!-- 定位权限 -->
+  <uses-permission android:name="android.permission.WAKE_LOCK"/>
   <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
   <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
   <uses-permission android:name="android.permission.ACCESS_GPS"/>
@@ -40,7 +42,7 @@
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
   <!-- 其它权限 -->
   <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
-  <!--【必选】用以设置前台是否显示通知-->
+  <!-- 【必选】用以设置前台是否显示通知 -->
   <uses-permission android:name="android.permission.GET_TASKS"/>
   <!-- 浮动通知权限 -->
   <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
@@ -55,6 +57,7 @@
   <!-- 自定义权限 -->
   <uses-permission android:name="android.permission.BAIDU_LOCATION_SERVICE"/>
   <uses-permission android:name="getui.permission.GetuiService.com.uniware.driver"/>
+
   <permission
       android:name="getui.permission.GetuiService.com.uniware.driver"
       android:protectionLevel="normal">
@@ -63,9 +66,9 @@
   <application
       android:name=".AppApplication"
       android:allowBackup="true"
-      android:persistent="true"
       android:icon="@drawable/logo"
       android:label="@string/app_name"
+      android:persistent="true"
       android:screenOrientation="portrait"
       android:supportsRtl="true"
       android:theme="@style/Theme.Light">
@@ -126,14 +129,12 @@
     <activity
         android:name=".gui.activity.OrderActivity"
         android:screenOrientation="portrait"
-        android:theme="@style/Theme.NoTitle"
-        >
+        android:theme="@style/Theme.NoTitle">
     </activity>
     <activity
         android:name=".gui.activity.BNDemoGuideActivity"
         android:screenOrientation="portrait"
-        android:theme="@style/Theme.NoTitle"
-    >
+        android:theme="@style/Theme.NoTitle">
     </activity>
     <activity
         android:name=".gui.activity.MainActivity"
@@ -153,24 +154,29 @@
         android:theme="@style/Theme.NoTitle">
     </activity>
     <!-- 百度地图 -->
-    <meta-data android:name="com.baidu.lbsapi.API_KEY"
+    <meta-data
+        android:name="com.baidu.lbsapi.API_KEY"
         android:value="U9PS58AhxIPOjb445xCMUWNRjmpoN0vZ"/>
     <meta-data
         android:name="BaiduMobAd_STAT_ID"
-        android:value="48ae76de3f" />
+        android:value="48ae76de3f"/>
 
     <service
         android:name="com.baidu.location.f"
         android:enabled="true"
-        android:process=":remote" >
+        android:process=":remote">
       <intent-filter>
-        <action android:name="com.baidu.location.service_v2.2" >
+        <action android:name="com.baidu.location.service_v2.2">
         </action>
       </intent-filter>
     </service>
     <!-- 友盟配置开始 -->
-    <meta-data android:value="567fabe567e58e7cb90008cf" android:name="UMENG_APPKEY"/>
-    <meta-data android:value="Umeng" android:name="UMENG_CHANNEL"/>
+    <meta-data
+        android:name="UMENG_APPKEY"
+        android:value="567fabe567e58e7cb90008cf"/>
+    <meta-data
+        android:name="UMENG_CHANNEL"
+        android:value="Umeng"/>
     <!-- Update Activitys Start -->
     <activity
         android:name="com.umeng.update.UpdateDialogActivity"
@@ -183,6 +189,7 @@
     </service>
     <!-- 友盟配置结束 -->
 
+
     <!-- 个推配置开始 -->
     <receiver
         android:name=".push.PushReceiver"
@@ -192,6 +199,16 @@
       </intent-filter>
     </receiver>
     <!-- 个推配置结束 -->
+    <activity android:name=".gui.activity.AddressActivity">
+    </activity>
+    <activity android:name=".gui.activity.ShowAddressActivity">
+    </activity>
+    <activity
+        android:screenOrientation="portrait"
+        android:theme="@style/Theme.NoTitle"
+        android:name=".gui.activity.RankActivity"
+        android:label="@string/title_activity_rank">
+    </activity>
   </application>
 
 </manifest>

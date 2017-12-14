@@ -26,7 +26,6 @@ public class OrderAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> 
   protected Cursor mCursor;
   protected ChangeObserver mChangeObserver;
   protected DataSetObserver mDataSetObserver;
-
   private final LayoutInflater layoutInflater;
   private OnItemClickListener orderItemClickListener;
   private OnItemClickListener1 onItemClickListener;

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:background="@drawable/common_bg_morning"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+  <RelativeLayout
+      android:background="@color/c_white_c0ffffff"
+      android:id="@+id/title"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+  <TextView
+      android:id="@+id/tv_back"
+      android:padding="10dp"
+      android:textSize="16sp"
+      android:text="@string/title_back_txt"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+  />
+    <TextView
+        android:textSize="16sp"
+        android:layout_centerInParent="true"
+        android:text="常驻地址"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:textSize="16sp"
+        android:id="@+id/tv_submit"
+        android:layout_alignParentRight="true"
+        android:padding="10dp"
+        android:text="提交"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:visibility="gone"
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/tv_submit"
+        android:background="@color/c_black"/>
+  </RelativeLayout>
+  <TextView
+      android:visibility="gone"
+      android:layout_below="@id/title"
+      android:id="@+id/tv_addresst"
+      android:layout_marginTop="10dp"
+      android:layout_marginLeft="10dp"
+      android:textSize="15sp"
+      android:text="您当前的常驻地住是："
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+  <TextView
+      android:visibility="gone"
+      android:layout_below="@+id/tv_addresst"
+      android:id="@+id/tv_address"
+      android:layout_margin="10dp"
+      android:textSize="15sp"
+      android:text="正在查询。。。。"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"/>
+  <LinearLayout
+      android:id="@+id/ll_geo"
+      android:layout_below="@+id/tv_address"
+      android:layout_width="fill_parent"
+      android:layout_height="50dip"
+      android:orientation="horizontal" >
+
+    <TextView
+        android:textSize="16sp"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="在" >
+    </TextView>
+
+    <EditText
+        android:textSize="16sp"
+        android:background="@color/c_transparent_00000000"
+        android:id="@+id/city"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="北京" />
+
+    <TextView
+        android:textSize="16sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="市内找" >
+    </TextView>
+
+    <AutoCompleteTextView
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:textSize="16sp"
+        android:id="@+id/searchkey"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.88"
+        android:hint="请输入搜索内容"
+    />
+  </LinearLayout>
+  <com.baidu.mapapi.map.MapView
+      android:visibility="gone"
+    android:layout_below="@+id/ll_geo"
+    android:id="@+id/bmapView"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:clickable="true" />
+</RelativeLayout>

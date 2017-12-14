@@ -10,6 +10,7 @@ import com.uniware.driver.domain.interactor.GetBacklogList;
 import com.uniware.driver.domain.interactor.GetOrderDetails;
 import com.uniware.driver.domain.interactor.GetOrderList;
 import com.uniware.driver.domain.interactor.GrabOrder;
+import com.uniware.driver.domain.interactor.ModelApply;
 import com.uniware.driver.domain.interactor.SaveOrder;
 import com.uniware.driver.domain.interactor.UnfinishOrder;
 import com.uniware.driver.domain.interactor.UpdateOrder;
@@ -84,5 +85,10 @@ import javax.inject.Named;
       Repository repository, ThreadExecutor threadExecutor,
       PostExecutionThread postExecutionThread) {
     return new FinishOrder(repository, threadExecutor, postExecutionThread);
+  }
+  @Provides @PerActivity @Named("modelApply") UseCase provideModelApplyUseCase(
+      Repository repository, ThreadExecutor threadExecutor,
+      PostExecutionThread postExecutionThread) {
+    return new ModelApply(repository, threadExecutor, postExecutionThread);
   }
 }

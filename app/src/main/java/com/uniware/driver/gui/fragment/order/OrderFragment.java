@@ -6,7 +6,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,9 +17,12 @@ import butterknife.Bind;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import com.uniware.driver.R;
+import com.uniware.driver.config.LoginConfig;
 import com.uniware.driver.data.database.Provider;
+import com.uniware.driver.domain.AddressResult;
 import com.uniware.driver.domain.Order;
 import com.uniware.driver.gui.activity.OrderDetailActivity;
+import com.uniware.driver.gui.activity.ShowAddressActivity;
 import com.uniware.driver.gui.fragment.BaseFragment;
 import com.uniware.driver.gui.ui.AppDialog;
 import com.uniware.driver.gui.ui.controlpanel.ControlPanel;
@@ -35,6 +37,8 @@ import com.uniware.driver.mvp.view.OrderStateView;
 import com.uniware.driver.util.ToastUtil;
 import com.uniware.driver.util.Tools;
 import de.greenrobot.event.EventBus;
+import de.greenrobot.event.Subscribe;
+import de.greenrobot.event.ThreadMode;
 import javax.inject.Inject;
 
 /**
@@ -118,9 +122,11 @@ public class OrderFragment extends BaseFragment implements OrderFragmentView, Co
     @Override public void onClick(View v) {
       switch (v.getId()) {
         case R.id.submenu_peacock_empty:
-          orderPanelPresenter.ttsSpeaking("空车模式");
+          orderPanelPresenter.ttsSpeaking("普通模式");
           //mMainView.getAnnounceFragment().setListeningMode(0);
-          Tools.LISTEN_MODE= Tools.ListenMode.CARNULL;
+          orderPanelPresenter.setModelApply(1);
+          LoginConfig.getInstance().setModel(1);
+          Tools.LISTEN_MODE= Tools.ListenMode.NOMAL;
           EventBus.getDefault().post(Tools.LISTEN_MODE);
           break;
         case R.id.submenu_peacock_carry:
@@ -130,15 +136,18 @@ public class OrderFragment extends BaseFragment implements OrderFragmentView, Co
           EventBus.getDefault().post(Tools.LISTEN_MODE);
           break;
         case R.id.submenu_peacock_wind:
-          orderPanelPresenter.ttsSpeaking("顺风车模式");
+          orderPanelPresenter.ttsSpeaking("定点模式");
           //mMainView.getAnnounceFragment().setListeningMode(2);
-          Tools.LISTEN_MODE= Tools.ListenMode.WIND;
-          EventBus.getDefault().post(Tools.LISTEN_MODE);
+          Intent intent=new Intent(getActivity(), ShowAddressActivity.class);
+          intent.getIntExtra("from",1);
+          startActivity(intent);
           break;
         case R.id.submenu_peacock_setting:
-          orderPanelPresenter.ttsSpeaking("回家模式");
+          orderPanelPresenter.ttsSpeaking("指派模式");
+          orderPanelPresenter.setModelApply(2);
+          LoginConfig.getInstance().setModel(2);
           //ModeSettingFragment.newInstance().show(getFragmentManager(), "orderSetting");
-          Tools.LISTEN_MODE= Tools.ListenMode.HOME;
+          Tools.LISTEN_MODE= Tools.ListenMode.ASSIGN;
           EventBus.getDefault().post(Tools.LISTEN_MODE);
           break;
       }
@@ -244,9 +253,9 @@ public class OrderFragment extends BaseFragment implements OrderFragmentView, Co
     this.order = order;
     if (order.getType() == 0) {
       mTitleView.setOrderTitle(order.getType(), "距您" + order.getDistances() + "公里",
-          order.getPassengerAttr());
+          order.getIsAssign());
     } else {
-      mTitleView.setOrderTitle(order.getType(), order.getDescrTimer(), order.getPassengerAttr());
+      mTitleView.setOrderTitle(order.getType(), order.getDescrTimer(), order.getIsAssign());
     }
     mAddressView.setAddress(order.getXfromAddr(), order.getXtoAddr(), order.getDescription());
     setBgByOrderType(order.getType());
@@ -338,6 +347,7 @@ public class OrderFragment extends BaseFragment implements OrderFragmentView, Co
   @Nullable @Override public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     View view;
+    EventBus.getDefault().register(this);
     if (!isPopOrder) {
       view = inflater.inflate(R.layout.order_fragment_layout, container, false);
       mContentView = view.findViewById(R.id.order_fragment_layout);
@@ -396,6 +406,7 @@ public class OrderFragment extends BaseFragment implements OrderFragmentView, Co
 
   @Override public void onDestroy() {
     super.onDestroy();
+    EventBus.getDefault().unregister(this);
     orderPanelPresenter.destroy();
   }
 
@@ -415,7 +426,6 @@ public class OrderFragment extends BaseFragment implements OrderFragmentView, Co
   }
 
   @Override public void hideOrderView() {
-    Log.e("=====","关闭了VIew  fragment");
     closeOrder();
   }
 
@@ -495,5 +505,14 @@ public class OrderFragment extends BaseFragment implements OrderFragmentView, Co
 
   public interface OrderFragmentInvalidListener {
     void onOrderFragmentInvalid();
+  }
+  @Subscribe(threadMode = ThreadMode.PostThread)public void messageHandler(AddressResult.AddressBean data){
+    LoginConfig.getInstance().setModel(3);
+    LoginConfig.getInstance().setAddressId(data.getId());
+    LoginConfig.getInstance().setAddressLat(data.getLat()+"");
+    LoginConfig.getInstance().setAddressLon(data.getLon()+"");
+    orderPanelPresenter.setModelApply(3);
+    Tools.LISTEN_MODE= Tools.ListenMode.ADDRESS;
+    EventBus.getDefault().post(Tools.LISTEN_MODE);
   }
 }

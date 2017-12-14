@@ -69,6 +69,9 @@
   <style name="TextView.White.Large.Translucent_75" parent="@style/TextView.White.Large">
     <item name="android:textColor">@color/c_white_c0ffffff</item>
   </style>
+  <style name="TextView.yellow.Large.Translucent" parent="@style/TextView.White.Large">
+    <item name="android:textColor">@color/trans_orange</item>
+  </style>
   <style name="TextView.White.XLarge" parent="@style/TextView.White">
     <item name="android:textSize">@dimen/f_48</item>
   </style>

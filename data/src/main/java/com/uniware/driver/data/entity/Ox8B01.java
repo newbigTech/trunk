@@ -80,6 +80,18 @@ public class Ox8B01 extends JT905MessageBody {
    * 业务描述:对乘客要车详细地点的描述
    */
   private String bizDescription;
+  /**
+   * 距离描述长度
+   */
+  private byte disDescLength;
+  /**
+   * 业务描述:对乘客要车距离的描述
+   */
+  private String disDescription;
+  /**
+   * 是否指派
+   */
+  private byte assign;
 
   @Override public byte[] WriteToBytes() {
 
@@ -165,9 +177,36 @@ public class Ox8B01 extends JT905MessageBody {
       setXtoAddr(new String(buffer.getBytes(getXtoAddrLength()),"GBK"));
       setBizDescLength(buffer.getByte());
       setBizDescription(new String(buffer.getBytes(getBizDescLength()), "GBK"));
+      setDisDescLength(buffer.getByte());
+      setDisDescription(new String(buffer.getBytes(getDisDescLength()),"GBK"));
+      setAssign(buffer.getByte());
     } catch (UnsupportedEncodingException e) {
       e.printStackTrace();
     }
+  }
+
+  public byte getAssign() {
+    return assign;
+  }
+
+  public void setAssign(byte assign) {
+    this.assign = assign;
+  }
+
+  public byte getDisDescLength() {
+    return disDescLength;
+  }
+
+  public void setDisDescLength(byte disDescLength) {
+    this.disDescLength = disDescLength;
+  }
+
+  public String getDisDescription() {
+    return disDescription;
+  }
+
+  public void setDisDescription(String disDescription) {
+    this.disDescription = disDescription;
   }
 
   public final int getBizId() {
@@ -350,6 +389,10 @@ public class Ox8B01 extends JT905MessageBody {
         + " x目的地："
         + xtoAddr
         + " 描述："
-        + bizDescription;
+        + bizDescription
+        +"  距离:"
+        +disDescription
+        +"  是否指派:"
+        +assign;
   }
 }

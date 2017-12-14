@@ -7,10 +7,12 @@ import com.uniware.driver.data.DriverLocation;
 import com.uniware.driver.data.cache.DataCache;
 import com.uniware.driver.data.exception.NetworkConnectionException;
 import com.uniware.driver.data.net.RestApi;
+import com.uniware.driver.domain.AddressResult;
 import com.uniware.driver.domain.CallRecord;
 import com.uniware.driver.domain.HttpResult;
 import com.uniware.driver.domain.LoginResult;
 import com.uniware.driver.domain.NetBiz;
+import com.uniware.driver.domain.RankResult;
 import com.uniware.driver.domain.RegisterInfo;
 import com.uniware.driver.domain.StriveStatus;
 import com.uniware.driver.domain.VersionCodeResult;
@@ -128,6 +130,23 @@ import rx.functions.Func1;
     });
   }
 
+  public Observable<AddressResult> querAddressd(String username){
+    return restApi.queryAddressd(username)
+        .onErrorResumeNext(new Func1<Throwable, Observable<? extends AddressResult>>() {
+          @Override public Observable<? extends AddressResult> call(Throwable t) {
+            return Observable.error(new NetworkConnectionException(t));
+          }
+        });
+  }
+  public Observable<NetBiz> updateAddress(String phone,int orderId,String address,double lon,double lat,int type,String des) {
+    return restApi.updateAddress(phone,orderId,address,lon,lat,type,des)
+        .onErrorResumeNext(new Func1<Throwable, Observable<? extends NetBiz>>() {
+          @Override public Observable<? extends NetBiz> call(Throwable throwable) {
+            return Observable.error(new NetworkConnectionException(throwable));
+          }
+        });
+  }
+
   @Override public Observable<StriveStatus> grabOrder(String orderId) {
     return restApi.grabOrder(orderId, token)
         .onErrorResumeNext(new Func1<Throwable, Observable<? extends StriveStatus>>() {
@@ -153,5 +172,18 @@ import rx.functions.Func1;
             return Observable.error(new NetworkConnectionException(throwable));
           }
         });
+  }
+
+  public Observable<RankResult> rankSearch(int type){
+    return restApi.rankSearch(type)
+        .onErrorResumeNext(new Func1<Throwable, Observable<? extends RankResult>>() {
+          @Override public Observable<? extends RankResult> call(Throwable throwable) {
+            return Observable.error(new NetworkConnectionException(throwable));
+          }
+        });
+  }
+
+  @Override public Observable<NetBiz> modelApply(int orderId) {
+    return null;
   }
 }

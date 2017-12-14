@@ -7,6 +7,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.PowerManager;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -71,6 +72,8 @@ public class MainActivity extends BaseActivity
   @Bind(R.id.main_user_edu_layout) RelativeLayout mUserEduLayout;
   @Bind(R.id.main_user_edu_image) ImageView mUserEduImageView;
   private int mUserEduStep;
+  PowerManager powerManager = null;
+  PowerManager.WakeLock wakeLock = null;
 
   private ControlPanel.OrderSettingCallback mEmptyCarOrderSettingCallback =
       new ControlPanel.OrderSettingCallback() {
@@ -214,6 +217,8 @@ public class MainActivity extends BaseActivity
     initializeInjector();
     this.setContentView(R.layout.main_activity_layout);
     ButterKnife.bind(this);
+    powerManager = (PowerManager)this.getSystemService(this.POWER_SERVICE);
+    wakeLock = this.powerManager.newWakeLock(PowerManager.FULL_WAKE_LOCK, "My Lock");
     mainPresenter.startPush();
     this.initViews();
     this.setSyncTime();
@@ -248,6 +253,7 @@ public class MainActivity extends BaseActivity
   }
 
   @Override protected void onStart() {
+
     locationService = ((AppApplication) getApplication()).locationService;
     //获取locationservice实例，建议应用中只初始化1个location实例，然后使用，可以参考其他示例的activity，都是通过此种方式获取locationservice实例的
     locationService.registerListener(mListener);
@@ -266,6 +272,7 @@ public class MainActivity extends BaseActivity
 
   @Override protected void onResume() {
     super.onResume();
+    wakeLock.acquire();
     mainPresenter.resume();
     this.checkCheatTool();
     this.checkMockGpsSwitch();
@@ -278,6 +285,7 @@ public class MainActivity extends BaseActivity
 
   @Override protected void onPause() {
     super.onPause();
+    wakeLock.release();
     mainPresenter.pause();
     this.blockScreenLock();
   }

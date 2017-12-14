@@ -119,6 +119,7 @@ public class AnnounceFragment extends MainFragment
     LoginConfig loginConfig=LoginConfig.getInstance();
     int hobby=loginConfig.getHobby();
     int distance=loginConfig.getDistance();
+    int mode=loginConfig.getModel();
     String hobbys=null;
     String distances=null;
     switch (hobby){
@@ -145,7 +146,19 @@ public class AnnounceFragment extends MainFragment
       case 5:
         distances="5";break;
     }
-    tvListenMode.setText(String.format(getString(R.string.listening_mode), "空车模式"));
+    String modes="";
+    switch (mode){
+      case 1:
+        tvListenMode.setText(String.format(getString(R.string.listening_mode), "普通模式"));
+        break;
+      case 2:
+        tvListenMode.setText(String.format(getString(R.string.listening_mode), "定点模式"));
+        break;
+      case 3:
+        tvListenMode.setText(String.format(getString(R.string.listening_mode), "指派模式"));
+        break;
+    }
+    //tvListenMode.setText(String.format(getString(R.string.listening_mode), "空车模式"));
     tvListenHobby.setText(String.format(getString(R.string.listening_hobby), hobbys));
     tvListenRange.setText(String.format(getString(R.string.listening_range), distances));
     tvCarMode.setText(String.format(getString(R.string.car_mode), "空车模式"));
@@ -159,17 +172,19 @@ public class AnnounceFragment extends MainFragment
 
   @Subscribe(threadMode = ThreadMode.PostThread)public void messageHandler(Tools.ListenMode mode){
     switch (mode){
-      case WIND:
-        tvListenMode.setText(String.format(getString(R.string.listening_mode), "顺风模式"));
+      case ADDRESS:
+        tvListenMode.setText(String.format(getString(R.string.listening_mode), "定点模式"));
         break;
       case WEIGHT:
         tvListenMode.setText(String.format(getString(R.string.listening_mode), "重车模式"));
         break;
-      case CARNULL:
-        tvListenMode.setText(String.format(getString(R.string.listening_mode), "空车模式"));
+      case NOMAL:
+        tvListenMode.setText(String.format(getString(R.string.listening_mode), "普通模式"));
         break;
       case HOME:
         tvListenMode.setText(String.format(getString(R.string.listening_mode), "回家模式"));
+      case ASSIGN:
+        tvListenMode.setText(String.format(getString(R.string.listening_mode), "指派模式"));
         break;
     }
   }

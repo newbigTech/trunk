@@ -8,11 +8,13 @@ import com.uniware.driver.data.database.Provider;
 import com.uniware.driver.data.exception.NetworkConnectionException;
 import com.uniware.driver.domain.CallRecord;
 import com.uniware.driver.domain.HttpResult;
+import com.uniware.driver.domain.NetBiz;
 import com.uniware.driver.domain.Order;
 import com.uniware.driver.domain.exception.DefaultErrorBundle;
 import com.uniware.driver.domain.exception.ErrorBundle;
 import com.uniware.driver.domain.interactor.DefaultSubscriber;
 import com.uniware.driver.domain.interactor.FinishOrder;
+import com.uniware.driver.domain.interactor.ModelApply;
 import com.uniware.driver.domain.interactor.UnfinishOrder;
 import com.uniware.driver.domain.interactor.UpdateLocation;
 import com.uniware.driver.domain.interactor.UseCase;
@@ -33,11 +35,14 @@ public class MainPresenter implements Presenter {
   private final UseCase updateLocation;
   private final UseCase unfinishOrder;
   private final UseCase finishOrder;
+  private final UseCase modelApply;
   private MainActivityView mainActivityView;
 
   @Inject public MainPresenter(@Named("startPush") UseCase startPush,
-      @Named("updateLocation") UseCase updateLocation,@Named("unfinishOrder") UseCase unfinishOrder,@Named("finishOrder") UseCase finishOrder) {
+      @Named("updateLocation") UseCase updateLocation,@Named("unfinishOrder") UseCase unfinishOrder,
+      @Named("finishOrder") UseCase finishOrder,@Named("modelApply") UseCase modelApply) {
     this.startPush = startPush;
+    this.modelApply=modelApply;
     this.updateLocation = updateLocation;
     this.unfinishOrder=unfinishOrder;
     this.finishOrder=finishOrder;
@@ -91,9 +96,23 @@ public class MainPresenter implements Presenter {
       super.onNext(aBoolean);
       LogUtils.e(this, "链接push服务成功~");
       updateLocation.schedule(5, 10, new UpdateLocationSubscriber());
+      ((ModelApply)modelApply).setType(LoginConfig.getInstance().getModel());
+      modelApply.schedule(10,new ModelApplySubscriber());
     }
   }
+  private final class ModelApplySubscriber extends DefaultSubscriber<NetBiz>{
+    @Override public void onCompleted() {
+      super.onCompleted();
+    }
 
+    @Override public void onError(Throwable e) {
+      super.onError(e);
+    }
+
+    @Override public void onNext(NetBiz netBiz) {
+      super.onNext(netBiz);
+    }
+  }
   private final class UpdateLocationSubscriber extends DefaultSubscriber<Void> {
     @Override public void onCompleted() {
       super.onCompleted();

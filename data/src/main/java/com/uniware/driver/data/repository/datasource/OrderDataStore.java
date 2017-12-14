@@ -14,4 +14,6 @@ public interface OrderDataStore {
   Observable<NetBiz> completeOrder(String orderId);
 
   Observable<NetBiz> cancelOrder(String orderId);
+
+  Observable<NetBiz> modelApply(int orderId);
 }

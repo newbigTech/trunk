@@ -124,7 +124,11 @@ public class Tools {
     WEIGHT("重车模式"),
     CARNULL("空车模式"),
     WIND("顺风模式"),
-    HOME("回家模式");
+    HOME("回家模式"),
+    NOMAL("普通模式"),
+    ADDRESS("定点模式"),
+    ASSIGN("指派模式");
+
 
     ListenMode(String mode) {
       this.mode = mode;

@@ -1,6 +1,5 @@
 package com.uniware.driver.config;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import com.uniware.driver.AppApplication;
 
@@ -70,6 +69,9 @@ public class LoginConfig {
     mEditor.putString("lat", lat).commit();
     mEditor.putString("lon", lon).commit();
   }
+  /**
+   * 当前定位信息
+   */
   public String getLat(){
     return  mPref.getString("lat","0");
   }
@@ -77,4 +79,36 @@ public class LoginConfig {
     return  mPref.getString("lon","0");
 
     }
+
+  /**
+   * 听单模式
+   * @return
+   */
+  public int getModel(){
+    return mPref.getInt("model",1);
+  }
+  public void setModel(int type){
+    mEditor.putInt("model",type).commit();
+  }
+  /**
+   * 定点信息:addressId
+   */
+  public int getAddressId(){
+    return mPref.getInt("addressId",0);
+  }
+  public void setAddressId(int id){
+    mEditor.putInt("addressId",id);
+  }
+  public String getAddressLat(){
+    return mPref.getString("addressLat","0");
+  }
+  public void setAddressLat(String lat){
+    mEditor.putString("addressLat",lat);
+  }
+  public String getAddressLon(){
+    return mPref.getString("addressLon","0");
+  }
+  public void setAddressLon(String lon){
+    mEditor.putString("addressLon",lon);
+  }
 }

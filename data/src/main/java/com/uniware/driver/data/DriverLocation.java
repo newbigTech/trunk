@@ -31,6 +31,20 @@ public class DriverLocation {
     location.setLongitude(Double.parseDouble(sp.getString("lon","0")));
     return location == null ? defaultLocation : location;
   }
+  public int getAddressId(){
+    SharedPreferences sp=context.getSharedPreferences("userYJ",0);
+    return sp.getInt("addressId",0);
+  }
+  public double getAddressLat(){
+    SharedPreferences sp=context.getSharedPreferences("userYJ",0);
+    Double d=Double.parseDouble(sp.getString("addressLat","0"));
+    return d;
+  }
+  public double getAddressLon(){
+    SharedPreferences sp=context.getSharedPreferences("userYJ",0);
+    Double d=Double.parseDouble(sp.getString("addressLon","0"));
+    return d;
+  }
 
   public int getFlag(){
     SharedPreferences sp=context.getSharedPreferences("userYJ",0);

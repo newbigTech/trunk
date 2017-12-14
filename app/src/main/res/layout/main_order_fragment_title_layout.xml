@@ -27,8 +27,16 @@
         android:layout_marginLeft="15.0dip"
         android:layout_marginRight="15.0dip"
         android:layout_centerInParent="true">
-
       <TextView
+          android:textSize="@dimen/f_38"
+          android:layout_gravity="center_horizontal"
+          android:id="@id/txt_valid_text"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/main_order_order_tip"
+          style="@style/TextView.White"/>
+      <TextView
+          android:layout_marginTop="5dp"
           android:textSize="@dimen/f_64"
           android:gravity="center_horizontal"
           android:id="@id/txt_valid_title"
@@ -37,14 +45,6 @@
           android:text="距离20.5公里，增收1000元"
           style="@style/TextView.White.XXXXLarge"/>
 
-      <TextView
-          android:textSize="@dimen/f_32"
-          android:layout_gravity="center_horizontal"
-          android:id="@id/txt_valid_text"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:text="@string/main_order_order_tip"
-          style="@style/TextView.White.Large.Translucent_75"/>
     </LinearLayout>
   </RelativeLayout>
 

@@ -50,10 +50,16 @@ public class OrderTitleView extends RelativeLayout {
     this.mTxtInvalidText = (TextView) this.findViewById(R.id.txt_invalid_text);
   }
 
-  public void setOrderTitle(int type, String title, String tip){
+  public void setOrderTitle(int type, String title, int tip){
     setBgByOrderType(type);
     mTxtValidTitle.setText(title);
-    mTxtValidText.setText(tip);
+    if (tip==0){
+      mTxtInvalidText.setVisibility(View.VISIBLE);
+    }
+    else {
+      mTxtInvalidText.setVisibility(View.INVISIBLE);
+    }
+    //mTxtValidText.setText(tip+"");
     //if(!tip.equals("")&&!tip.equals("无")){
     //  mTxtInvalidText.setVisibility(View.VISIBLE);
     //}

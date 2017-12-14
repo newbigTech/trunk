@@ -1,5 +1,6 @@
 package com.uniware.driver.gui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.widget.GridLayoutManager;
@@ -11,6 +12,8 @@ import android.view.ViewGroup;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import com.uniware.driver.R;
+import com.uniware.driver.gui.activity.RankActivity;
+import com.uniware.driver.gui.activity.ShowAddressActivity;
 import com.uniware.driver.gui.adapter.GridAdapter;
 import com.uniware.driver.gui.fragment.setting.ModeSettingFragment;
 import com.uniware.driver.mvp.injector.components.DriverComponent;
@@ -26,7 +29,7 @@ public class GridFragment extends MainFragment implements GridFragmentView {
   private int[] rId = new int[] {
       R.drawable.grid_accept_fare1_ic, R.drawable.grid_apply_recommand1_ic,
       R.drawable.grid_apply_square1_ic, R.drawable.grid_apply_traffic1_ic,
-      R.drawable.grid_apply_setting1_ic
+      R.drawable.grid_apply_setting1_ic,R.drawable.ic_address
   };
   @Inject GridPresenter gridPresenter;
 
@@ -77,6 +80,15 @@ public class GridFragment extends MainFragment implements GridFragmentView {
       @Override public void onOrderItemClicked(int id) {
         if (id==4){
           ModeSettingFragment.newInstance().show(getFragmentManager(), "orderSetting");
+        }
+        if (id==5){
+          Intent intent=new Intent(getActivity(), ShowAddressActivity.class);
+          intent.putExtra("from",2);
+          startActivity(intent);
+        }
+        if (id==2){
+          Intent intent=new Intent(getActivity(), RankActivity.class);
+          startActivity(intent);
         }
       }
     });

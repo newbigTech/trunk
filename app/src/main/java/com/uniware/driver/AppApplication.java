@@ -45,7 +45,7 @@ public class AppApplication extends Application {
     //讯飞初始化
     SpeechUtility.createUtility(this, "appid=584fbffe");
     //百度地图初始化
-   // SDKInitializer.initialize(this);
+    //SDKInitializer.initialize(this);
     String deviceInfo = Tools.getDeviceInfo(this);
     LogUtils.e(this, deviceInfo);
   }

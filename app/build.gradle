@@ -20,8 +20,8 @@ android {
     applicationId "com.uniware.driver"
     minSdkVersion 15
     targetSdkVersion 22
-    versionCode 13
-    versionName "1.11.00"
+    versionCode 18
+    versionName "1.12.13"
     manifestPlaceholders = [GETUI_APP_ID    : "NB4dA5ONuVA32o9RWh4yE9",
                             GETUI_APP_KEY   : "DaetpMcci26TV02a4CJ1W",
                             GETUI_APP_SECRET: "vJYcsVbeSl5ugTE9IuRip9",
@@ -101,24 +101,25 @@ android {
 
 dependencies {
   compile fileTree(include: ['*.jar'], dir: 'libs')
-  testCompile 'junit:junit:4.12'
   compile project(':domain')
   compile project(':data')
   compile project(':peacock')
-  apt 'com.google.dagger:dagger-compiler:2.1'
-  provided 'javax.annotation:jsr250-api:1.0'
+  //compile 'com.android.support:support-v4:20.+'
+  //友盟统计分析
+  //个推
+  compile files('libs/Sunflower.jar')
+
   compile 'com.google.dagger:dagger:2.1'
   compile 'io.reactivex:rxandroid:1.1.0'
   compile 'com.jakewharton:butterknife:7.0.1'
-  //compile 'com.android.support:support-v4:20.+'
-  //友盟统计分析
   compile 'com.umeng.analytics:analytics:latest.integration'
-  //个推
   compile 'com.igexin:sdk:latest.integration'
   compile 'com.igexin:getuiext:2.0.3'
-  compile 'com.android.support:design:23.1.1'
-  compile 'com.android.support:appcompat-v7:23.0.1'
+  compile 'com.android.support:design:23.4.0'
+  compile 'com.android.support:appcompat-v7:23.4.0'
   compile 'de.greenrobot:eventbus:3.0.0-beta1'
-  compile files('libs/Sunflower.jar')
+  testCompile 'junit:junit:4.12'
+  apt 'com.google.dagger:dagger-compiler:2.1'
+  provided 'javax.annotation:jsr250-api:1.0'
 }
 

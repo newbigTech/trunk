@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">移步叫车司机</string>
+  <string name="app_name">一路快佈司机</string>
 
   //Exception messages
   <string name="exception_message_generic">There was an application error</string>
@@ -16,7 +16,7 @@
   <string name="title_more_txt">更多</string>
   <string name="title_my_order_txt">我的订单</string>
   <string name="title_end_order_txt">取消订单</string>
-  <string name="login_title_name_txt">移步叫车司机</string>
+  <string name="login_title_name_txt">一路快佈司机</string>
   <string name="yuyue_text">请您立即联系乘客，确保订单有效</string>
   <string name="login_phone_number_txt">手机号</string>
   <string name="login_verify_code">验证码</string>
@@ -51,7 +51,7 @@
   <string name="order_grabbed_by_others_vs_his_total_result">700</string>
   <string name="main_order_flip_to_show_map">向上滑动查看地图</string>
   <string name="main_order_flip_to_show_order">向下滑动查看订单</string>
-  <string name="main_order_order_tip">小费%s元</string>
+  <string name="main_order_order_tip">指派</string>
   <string name="main_order_order_grabed">订单已被抢</string>
   <string name="main_control_panel_show_all">全部</string>
   <string name="main_control_panel_start_off">电召</string>
@@ -222,4 +222,5 @@
   <string name="change_to_traditional">地图切换为繁体</string>
   <string name="change_to_simplified_tips">已切换为简体，请在地图图层页看效果</string>
   <string name="change_to_traditional_tips">已切换为繁体，请在地图图层页看效果</string>
+  <string name="title_activity_rank">RankActivity</string>
 </resources>

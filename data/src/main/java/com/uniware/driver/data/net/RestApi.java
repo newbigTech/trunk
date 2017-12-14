@@ -1,9 +1,11 @@
 package com.uniware.driver.data.net;
 
+import com.uniware.driver.domain.AddressResult;
 import com.uniware.driver.domain.CallRecord;
 import com.uniware.driver.domain.HttpResult;
 import com.uniware.driver.domain.LoginResult;
 import com.uniware.driver.domain.NetBiz;
+import com.uniware.driver.domain.RankResult;
 import com.uniware.driver.domain.StriveStatus;
 import com.uniware.driver.domain.VersionCodeResult;
 import java.util.List;
@@ -20,10 +22,10 @@ public interface RestApi {
     //String API_BASE_URL = "http://223.72.209.142:9000/905platform/";
     //String API_BASE_URL = "http://uniwaredev.6655.la:9100/905platform/";
 
-   //jyj ceshi
+    //jyj ceshi
     //String API_BASE_URL = "http://223.72.209.140:10580/905platform/";
     //
-    String API_BASE_URL = "http://192.168.1.101:9000/905platform/";
+    String API_BASE_URL = "http://36.106.8.163:9100/905platform/";
   @GET("DriverAppController/login.do") Observable<LoginResult> login(@Query("username") String phoneNum, @Query("password") String pwd);
 
   @GET("DriverAppController/loginwithtoken.do") Observable<LoginResult> login(@Query("token") String token);
@@ -43,6 +45,7 @@ public interface RestApi {
 
   @GET("orders/{oid}/complete") Observable<NetBiz> completeOrder(@Path("oid") String orderId,
       @Query("token") String token);
+  @GET("orders/{oid}/complete") Observable<NetBiz> modelApply (@Path("oid") String orderId);
 
   @GET("DriverAppController/callConform.do") Observable<HttpResult<List<CallRecord>>> getUnfinishOrder(
       @Query("driverTel") String phoneNum,@Query("currPage") String currPage, @Query("pageSize") String pageSize );
@@ -51,4 +54,11 @@ public interface RestApi {
       @Query("driverTel") String phoneNum,@Query("currPage") String currPage, @Query("pageSize") String pageSize );
 
   @GET("orders/{oid}/cancel") Observable<NetBiz> cancelOrder(@Path("oid") String orderId, @Query("token") String token);
+
+  @GET("DriverAppController/queryAddress.do") Observable<AddressResult> queryAddressd(@Query("driverTel") String username);
+
+  @GET("DriverAppController/setAddress.do") Observable<NetBiz> updateAddress(@Query("driverTel") String username,
+      @Query("addressId") int addressId,@Query("address") String address,@Query("lon") double lon,@Query("lat") double lat,@Query("type") int type
+      ,@Query("description") String description);
+  @GET("DriverAppController/askForRankingList.do")Observable<RankResult>rankSearch(@Query("type") int type);
 }

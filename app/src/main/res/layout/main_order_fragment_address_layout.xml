@@ -35,8 +35,7 @@
 
       <TextView
           android:textSize="@dimen/order_address_name_text_size"
-          android:textColor="@color/text_color_dark_gray"
-
+          android:textColor="@android:color/white"
           android:id="@id/txt_name_from"
           android:layout_width="fill_parent"
           android:layout_height="wrap_content"
@@ -72,8 +71,7 @@
 
       <TextView
           android:textSize="@dimen/order_address_name_text_size"
-          android:textColor="@color/text_color_dark_gray"
-
+          android:textColor="@android:color/white"
           android:id="@id/txt_name_to"
           android:visibility="visible"
           android:layout_width="fill_parent"

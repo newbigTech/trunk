@@ -96,6 +96,16 @@ public class Order extends BizObject implements Comparable<Order> {
 
   private double distances;
 
+  private int isAssign;
+
+  public int getIsAssign() {
+    return isAssign;
+  }
+
+  public void setIsAssign(int isAssign) {
+    this.isAssign = isAssign;
+  }
+
   public String getXtoAddr() {
     return xtoAddr;
   }

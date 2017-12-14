@@ -23,6 +23,7 @@ import javax.inject.Named;
     return new StartPush(repository, threadExecutor, postExecutionThread);
   }
 
+
   @Provides @PerActivity @Named("updateLocation") UseCase provideUpdateLocationUseCase(
       Repository repository, ThreadExecutor threadExecutor,
       PostExecutionThread postExecutionThread) {

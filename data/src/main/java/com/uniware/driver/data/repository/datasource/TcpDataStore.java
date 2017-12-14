@@ -8,6 +8,7 @@ import com.uniware.driver.data.entity.Ox0200;
 import com.uniware.driver.data.entity.Ox0B01;
 import com.uniware.driver.data.entity.Ox0B02;
 import com.uniware.driver.data.entity.Ox0B08;
+import com.uniware.driver.data.entity.Ox0B10;
 import com.uniware.driver.data.entity.Ox8B01;
 import com.uniware.driver.data.entity.Ox8B02;
 import com.uniware.driver.data.entity.Ox8B09;
@@ -44,7 +45,6 @@ import rx.subjects.Subject;
  */
 @Singleton public class TcpDataStore implements OrderDataStore {
 
-  //private final Context context;
   @Inject DriverLocation driverLocation;
   private Connection<JT905Message, JT905Message> mConnection;
   private String isuID;
@@ -56,12 +56,8 @@ import rx.subjects.Subject;
    * Construct a {@link TcpDataStore} based on connections to the api (Cloud).
    */
   @Inject public TcpDataStore() {
-    //this.context = context;
     bus = new SerializedSubject<>(PublishSubject.create());
   }
-  //public TcpDataStore(){
-  //  bus = new SerializedSubject<>(PublishSubject.create());
-  //}
 
   private void createInput() {
     mConnection.getInput().map(new Func1<JT905Message, BizObject>() {
@@ -101,6 +97,7 @@ import rx.subjects.Subject;
           order.setToLat((double) ox8B01.getDestinationLatitude() / 600000);
           order.setToLng((double) ox8B01.getDestinationLongitude() / 600000);
           order.setDescription(ox8B01.getBizDescription());
+          order.setIsAssign(ox8B01.getAssign());
           Log.e("callFee",order.toString());
           //lisenter.setData(order);
           return order;
@@ -129,7 +126,6 @@ import rx.subjects.Subject;
             default:
               break;
           }
-          //lisenter.setData(striveStatus);
           status.setOid(ox8B09.getBizId() + "");
           return status;
         }
@@ -148,7 +144,7 @@ import rx.subjects.Subject;
       }
 
       @Override public void onError(Throwable e) {
-        bus.onError(e);
+       // bus.onError(e);
       }
 
       @Override public void onNext(BizObject bizObject) {
@@ -228,6 +224,33 @@ import rx.subjects.Subject;
     });
   }
 
+  @Override public Observable<NetBiz> modelApply( final int type){
+    return Observable.create(new Observable.OnSubscribe<NetBiz>() {
+      @Override public void call(Subscriber<? super NetBiz> subscriber) {
+        Ox0B10 ox0B10=new Ox0B10();
+        ox0B10.setType((byte) type);
+        if (type==3){
+          double lon = driverLocation.getAddressLon();
+          double lat = driverLocation.getAddressLat();
+          int lo=(int) (lon * 60 * 10000);
+          int la=(int) (lat * 60 * 10000);
+          ox0B10.setAddressId(driverLocation.getAddressId());
+          ox0B10.setLatitude(la);
+          ox0B10.setLongitude(lo);
+        }
+        JT905Message jt905Message = JT905Message.builder().body(ox0B10).isuId(isuID).build();
+        JT905Message message = JT905Message.builder().body(ox0B10).isuId(isuID).build();
+        mConnection.write(Observable.just(message)).subscribe(new Action1<Void>() {
+          @Override public void call(Void aVoid) {
+            Log.e("模式申请：", "发送成功");
+          }
+        });
+        NetBiz netBiz = new NetBiz();
+        netBiz.setErrno(0);
+        subscriber.onNext(netBiz);
+      }
+    });
+  }
   public Observable<Void> updateLocation(int flag) {
     double lon = driverLocation.getLocation().getLongitude();
     double lat = driverLocation.getLocation().getLatitude();
