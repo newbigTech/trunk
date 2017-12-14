@@ -284,6 +284,9 @@ public class Order extends BizObject implements Comparable<Order> {
 
   public String buildTtsStr() {
     StringBuilder stringBuilder = new StringBuilder();
+    if (isAssign==0){
+      stringBuilder.append("指派，");
+    }
     switch (type) {
       case 0:
         stringBuilder.append("即时，据您"+distances+"公里,");

@@ -55,9 +55,9 @@ public interface RestApi {
 
   @GET("orders/{oid}/cancel") Observable<NetBiz> cancelOrder(@Path("oid") String orderId, @Query("token") String token);
 
-  @GET("DriverAppController/queryAddress.do") Observable<AddressResult> queryAddressd(@Query("driverTel") String username);
+  @GET("DriverAppController/queryNewAddress.do") Observable<AddressResult> queryAddressd(@Query("driverTel") String username);
 
-  @GET("DriverAppController/setAddress.do") Observable<NetBiz> updateAddress(@Query("driverTel") String username,
+  @GET("DriverAppController/setNewAddress.do") Observable<NetBiz> updateAddress(@Query("driverTel") String username,
       @Query("addressId") int addressId,@Query("address") String address,@Query("lon") double lon,@Query("lat") double lat,@Query("type") int type
       ,@Query("description") String description);
   @GET("DriverAppController/askForRankingList.do")Observable<RankResult>rankSearch(@Query("type") int type);
