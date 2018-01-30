@@ -12,6 +12,7 @@ import com.uniware.driver.domain.CallRecord;
 import com.uniware.driver.domain.HttpResult;
 import com.uniware.driver.domain.LoginResult;
 import com.uniware.driver.domain.NetBiz;
+import com.uniware.driver.domain.NoticeResult;
 import com.uniware.driver.domain.Order;
 import com.uniware.driver.domain.RankResult;
 import com.uniware.driver.domain.StriveStatus;
@@ -150,6 +151,10 @@ import rx.Observable;
 
   @Override public Observable<RankResult> rankSearch(int type) {
     return restApiDataStore.rankSearch(type);
+  }
+
+  @Override public Observable<NoticeResult> searchNotice(String tel, int page) {
+    return restApiDataStore.noticeSearch(tel,page);
   }
 
   /**

@@ -2,6 +2,7 @@ package com.uniware.driver.mvp.injector.modules;
 
 import com.uniware.driver.domain.executor.PostExecutionThread;
 import com.uniware.driver.domain.executor.ThreadExecutor;
+import com.uniware.driver.domain.interactor.AllNotice;
 import com.uniware.driver.domain.interactor.CancelOrder;
 import com.uniware.driver.domain.interactor.CompleteOrder;
 import com.uniware.driver.domain.interactor.DeleteOrder;
@@ -90,5 +91,10 @@ import javax.inject.Named;
       Repository repository, ThreadExecutor threadExecutor,
       PostExecutionThread postExecutionThread) {
     return new ModelApply(repository, threadExecutor, postExecutionThread);
+  }
+  @Provides @PerActivity @Named("allNotice") UseCase provideAllNoticeUseCase(
+      Repository repository, ThreadExecutor threadExecutor,
+      PostExecutionThread postExecutionThread) {
+    return new AllNotice(repository, threadExecutor, postExecutionThread);
   }
 }

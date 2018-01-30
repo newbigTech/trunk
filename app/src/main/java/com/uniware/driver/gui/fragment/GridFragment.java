@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import butterknife.Bind;
 import butterknife.ButterKnife;
 import com.uniware.driver.R;
+import com.uniware.driver.gui.activity.NoticeActivity;
 import com.uniware.driver.gui.activity.RankActivity;
 import com.uniware.driver.gui.activity.ShowAddressActivity;
 import com.uniware.driver.gui.adapter.GridAdapter;
@@ -27,8 +28,8 @@ import javax.inject.Inject;
 public class GridFragment extends MainFragment implements GridFragmentView {
 
   private int[] rId = new int[] {
-      R.drawable.grid_accept_fare1_ic, R.drawable.grid_apply_recommand1_ic,
-      R.drawable.grid_apply_square1_ic, R.drawable.grid_apply_traffic1_ic,
+       R.drawable.grid_apply_recommand1_ic,
+      R.drawable.grid_apply_square1_ic,
       R.drawable.grid_apply_setting1_ic,R.drawable.ic_address
   };
   @Inject GridPresenter gridPresenter;
@@ -78,16 +79,20 @@ public class GridFragment extends MainFragment implements GridFragmentView {
     rvSetting.setAdapter(adapter);
     adapter.setOnItemClickListener(new GridAdapter.OnItemClickListener() {
       @Override public void onOrderItemClicked(int id) {
-        if (id==4){
+        if (id==2){
           ModeSettingFragment.newInstance().show(getFragmentManager(), "orderSetting");
         }
-        if (id==5){
+        if (id==3){
           Intent intent=new Intent(getActivity(), ShowAddressActivity.class);
           intent.putExtra("from",2);
           startActivity(intent);
         }
-        if (id==2){
+        if (id==1){
           Intent intent=new Intent(getActivity(), RankActivity.class);
+          startActivity(intent);
+        }
+        if (id==0){
+          Intent intent=new Intent(getActivity(), NoticeActivity.class);
           startActivity(intent);
         }
       }

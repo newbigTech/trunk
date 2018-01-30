@@ -38,7 +38,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
       holder.tvName.setText("家");
     }
     if (position==1){
-      holder.tvName.setText("公司");
+      holder.tvName.setText("其他");
     }
 
     holder.tvAddress.setText("设置地址");
@@ -49,7 +49,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
           holder.tvAddress.setText(list.get(0).getAddress());
         }
       }
-      if (list.get(0).getDescription().equals("公司")){
+      if (list.get(0).getDescription().equals("其他")){
         if (position==1){
           holder.tvAddress.setText(list.get(0).getAddress());
         }
@@ -59,7 +59,7 @@ public class AddressAdapter extends RecyclerView.Adapter<AddressAdapter.ViewHold
           holder.tvAddress.setText(list.get(1).getAddress());
         }
       }
-      if (list.get(1).getDescription().equals("公司")){
+      if (list.get(1).getDescription().equals("其他")){
         if (position==1){
           holder.tvAddress.setText(list.get(1).getAddress());
         }

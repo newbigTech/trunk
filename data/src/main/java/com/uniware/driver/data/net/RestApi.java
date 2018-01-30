@@ -5,6 +5,7 @@ import com.uniware.driver.domain.CallRecord;
 import com.uniware.driver.domain.HttpResult;
 import com.uniware.driver.domain.LoginResult;
 import com.uniware.driver.domain.NetBiz;
+import com.uniware.driver.domain.NoticeResult;
 import com.uniware.driver.domain.RankResult;
 import com.uniware.driver.domain.StriveStatus;
 import com.uniware.driver.domain.VersionCodeResult;
@@ -23,9 +24,9 @@ public interface RestApi {
     //String API_BASE_URL = "http://uniwaredev.6655.la:9100/905platform/";
 
     //jyj ceshi
-    //String API_BASE_URL = "http://223.72.209.140:10580/905platform/";
+     String API_BASE_URL = "http://223.72.209.140:10580/905platform/";
     //
-    String API_BASE_URL = "http://36.106.8.163:9100/905platform/";
+    //String API_BASE_URL = "http://180.213.117.47:9000/905platform/";
   @GET("DriverAppController/login.do") Observable<LoginResult> login(@Query("username") String phoneNum, @Query("password") String pwd);
 
   @GET("DriverAppController/loginwithtoken.do") Observable<LoginResult> login(@Query("token") String token);
@@ -61,4 +62,7 @@ public interface RestApi {
       @Query("addressId") int addressId,@Query("address") String address,@Query("lon") double lon,@Query("lat") double lat,@Query("type") int type
       ,@Query("description") String description);
   @GET("DriverAppController/askForRankingList.do")Observable<RankResult>rankSearch(@Query("type") int type);
+
+  @GET("DriverAppController/messageHistory.do")Observable<NoticeResult>noticeSearch(@Query("driverTel") String driverTel,
+      @Query("currPage") int currPage,@Query("pageSize") int pageSize);
 }

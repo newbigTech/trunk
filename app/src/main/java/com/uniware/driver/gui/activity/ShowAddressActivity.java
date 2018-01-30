@@ -79,9 +79,9 @@ public class ShowAddressActivity extends BaseActivity implements AddressResultVi
               EventBus.getDefault().post(list.get(1));
           }
           if (b==1){
-            if (list.get(0).getDescription().equals("公司"))
+            if (list.get(0).getDescription().equals("其他"))
               EventBus.getDefault().post(list.get(0));
-            else if (list.get(1).getDescription().equals("公司"))
+            else if (list.get(1).getDescription().equals("其他"))
               EventBus.getDefault().post(list.get(1));
           }
           ShowAddressActivity.this.finish();
@@ -117,7 +117,7 @@ public class ShowAddressActivity extends BaseActivity implements AddressResultVi
           if (b==1)
           {
             des=1;
-            if (list.get(0).getDescription().equals("公司"))
+            if (list.get(0).getDescription().equals("其他"))
             {
               intent.putExtra("addressId",list.get(0).getId());
               if (list.get(0).getId()==0){
@@ -127,7 +127,7 @@ public class ShowAddressActivity extends BaseActivity implements AddressResultVi
                 type=3;
               }
             }
-            if (list.get(1).getDescription().equals("公司"))
+            if (list.get(1).getDescription().equals("其他"))
             {
               intent.putExtra("addressId",list.get(1).getId());
               if (list.get(1).getId()==0){
@@ -201,7 +201,7 @@ public class ShowAddressActivity extends BaseActivity implements AddressResultVi
       AddressResult.AddressBean bean=new AddressResult.AddressBean();
       bean.setAddress("设置地址");
       if (list.get(0).getDescription().equals("家")){
-        bean.setDescription("公司");
+        bean.setDescription("其他");
       }
       else
         bean.setDescription("家");
@@ -216,7 +216,7 @@ public class ShowAddressActivity extends BaseActivity implements AddressResultVi
       bean.setDescription("家");
       AddressResult.AddressBean bean1=new AddressResult.AddressBean();
       bean1.setAddress("设置地址");
-      bean1.setDescription("公司");
+      bean1.setDescription("其他");
       bean1.setId(0);
       list.add(bean);
       list.add(bean1);

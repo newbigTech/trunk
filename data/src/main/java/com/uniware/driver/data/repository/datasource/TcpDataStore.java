@@ -12,11 +12,13 @@ import com.uniware.driver.data.entity.Ox0B10;
 import com.uniware.driver.data.entity.Ox8B01;
 import com.uniware.driver.data.entity.Ox8B02;
 import com.uniware.driver.data.entity.Ox8B09;
+import com.uniware.driver.data.entity.Ox8B50;
 import com.uniware.driver.data.exception.NetworkConnectionException;
 import com.uniware.driver.data.net.JT905MessageDecoder;
 import com.uniware.driver.data.net.JT905MessageEncoder;
 import com.uniware.driver.domain.BizObject;
 import com.uniware.driver.domain.NetBiz;
+import com.uniware.driver.domain.Notice;
 import com.uniware.driver.domain.Order;
 import com.uniware.driver.domain.OrderStatus;
 import com.uniware.driver.domain.StriveStatus;
@@ -101,7 +103,8 @@ import rx.subjects.Subject;
           Log.e("callFee",order.toString());
           //lisenter.setData(order);
           return order;
-        } else if ((jt905Message.getMessageId() & 0xFFFF) == 0x8B02) {
+        }
+        if ((jt905Message.getMessageId() & 0xFFFF) == 0x8B02) {
           Ox8B02 ox8B02 = (Ox8B02) jt905Message.getBody();
           StriveStatus striveStatus = new StriveStatus();
           striveStatus.setOid(ox8B02.getBizId() + "");
@@ -112,7 +115,8 @@ import rx.subjects.Subject;
           }
           //lisenter.setData(striveStatus);
           return striveStatus;
-        } else if ((jt905Message.getMessageId() & 0xFFFF) == 0x8B09) {
+        }
+        if ((jt905Message.getMessageId() & 0xFFFF) == 0x8B09) {
           Ox8B09 ox8B09 = (Ox8B09) jt905Message.getBody();
           OrderStatus status = new OrderStatus();
           switch (ox8B09.getStatus()){
@@ -128,6 +132,16 @@ import rx.subjects.Subject;
           }
           status.setOid(ox8B09.getBizId() + "");
           return status;
+        }
+        //通知
+         if ((jt905Message.getMessageId() & 0xFFFF) == 0x8B50){
+          Ox8B50 ox8B50= (Ox8B50) jt905Message.getBody();
+          Notice notice=new Notice();
+          notice.setIsUrgency(ox8B50.getIsUrgency());
+          notice.setIsShow(ox8B50.getIsShow());
+          notice.setIsPlay(ox8B50.getIsPlay());
+          notice.setContent(ox8B50.getNotice());
+          return notice;
         }
         return null;
       }

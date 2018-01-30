@@ -23,4 +23,10 @@ public class UserConfig {
   public static UserConfig getInstance(){
     return userConfig;
   }
+  public void setNoticeTag(String tag){
+    mEditor.putString("noticeTag",tag).commit();
+  }
+  public String getNoticeTag(){
+    return mPref.getString("noticeTag","");
+  }
 }

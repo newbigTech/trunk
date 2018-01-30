@@ -54,10 +54,10 @@ public class OrderTitleView extends RelativeLayout {
     setBgByOrderType(type);
     mTxtValidTitle.setText(title);
     if (tip==0){
-      mTxtInvalidText.setVisibility(View.VISIBLE);
+      mTxtValidText.setVisibility(View.VISIBLE);
     }
     else {
-      mTxtInvalidText.setVisibility(View.INVISIBLE);
+      mTxtValidText.setVisibility(View.INVISIBLE);
     }
     //mTxtValidText.setText(tip+"");
     //if(!tip.equals("")&&!tip.equals("无")){

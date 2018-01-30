@@ -84,6 +84,7 @@ public class RankActivity extends BaseActivity implements RankResultView {
       @Override public void onClick(DialogInterface dialog, int which) {
         presenter.rankSearch(which + 1);
         adapter.setShowType(which+1);
+        tvType.setText(cities[which]);
         Log.e("which",which+"");
         //buil
       }

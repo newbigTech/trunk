@@ -12,6 +12,7 @@ import com.uniware.driver.domain.CallRecord;
 import com.uniware.driver.domain.HttpResult;
 import com.uniware.driver.domain.LoginResult;
 import com.uniware.driver.domain.NetBiz;
+import com.uniware.driver.domain.NoticeResult;
 import com.uniware.driver.domain.RankResult;
 import com.uniware.driver.domain.RegisterInfo;
 import com.uniware.driver.domain.StriveStatus;
@@ -178,6 +179,15 @@ import rx.functions.Func1;
     return restApi.rankSearch(type)
         .onErrorResumeNext(new Func1<Throwable, Observable<? extends RankResult>>() {
           @Override public Observable<? extends RankResult> call(Throwable throwable) {
+            return Observable.error(new NetworkConnectionException(throwable));
+          }
+        });
+  }
+
+  public Observable<NoticeResult> noticeSearch(String tel,int type){
+    return restApi.noticeSearch(tel,type,20)
+        .onErrorResumeNext(new Func1<Throwable, Observable<? extends NoticeResult>>() {
+          @Override public Observable<? extends NoticeResult> call(Throwable throwable) {
             return Observable.error(new NetworkConnectionException(throwable));
           }
         });

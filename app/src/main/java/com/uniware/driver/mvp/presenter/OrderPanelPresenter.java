@@ -11,6 +11,7 @@ import com.uniware.driver.data.DriverLocation;
 import com.uniware.driver.data.repository.datasource.SQLiteDataStore;
 import com.uniware.driver.domain.BizObject;
 import com.uniware.driver.domain.NetBiz;
+import com.uniware.driver.domain.Notice;
 import com.uniware.driver.domain.Order;
 import com.uniware.driver.domain.OrderStatus;
 import com.uniware.driver.domain.StriveStatus;
@@ -317,6 +318,10 @@ public class OrderPanelPresenter implements Presenter {
             xfSpeech.ttsSpeaking(s + ","+reason);
           }
         }
+      }
+      else if (biz instanceof Notice){
+        Notice notice= (Notice) biz;
+        xfSpeech.ttsSpeaking("通知，"+notice.getContent());
       }
     }
   }

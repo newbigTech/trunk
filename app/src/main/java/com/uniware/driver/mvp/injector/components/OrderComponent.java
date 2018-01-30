@@ -1,6 +1,7 @@
 package com.uniware.driver.mvp.injector.components;
 
 import com.uniware.driver.gui.activity.GoPickActivity;
+import com.uniware.driver.gui.activity.NoticeActivity;
 import com.uniware.driver.gui.activity.OrderActivity;
 import com.uniware.driver.gui.activity.OrderDetailActivity;
 import com.uniware.driver.gui.fragment.AnnounceFragment;
@@ -19,6 +20,7 @@ public interface OrderComponent extends ActivityComponent {
   void inject(OrderDetailActivity activity);
   void inject(GoPickActivity activity);
   void inject(OrderActivity activity);
+  void inject(NoticeActivity activity);
   //void inject(OrderFragment orderFragment);
   void inject(DriverFragment driverFragment);
   void inject(AnnounceFragment announceFragment);

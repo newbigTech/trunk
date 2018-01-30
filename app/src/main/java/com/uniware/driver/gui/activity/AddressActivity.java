@@ -131,6 +131,7 @@ public class AddressActivity extends BaseActivity
            addressId,keyWorldsView.getText().toString(),
            list.get(position).get("lon"),
            list.get(position).get("lat"),type,des);
+        Log.e("latAndlon",list.get(position).get("lon")+"----"+list.get(position).get("lat"));
      }
     else {
        mSearch.geocode(new GeoCodeOption().city(editCity.getText().toString())
@@ -184,8 +185,10 @@ public class AddressActivity extends BaseActivity
           map.put("lon",info.pt.longitude);
           list.add(map);
 
+
       }
     }
+    //Log.e("suggestHashMap",list.toString());
     sugAdapter =
         new ArrayAdapter<String>(AddressActivity.this, android.R.layout.simple_dropdown_item_1line,
             suggest);

@@ -20,8 +20,8 @@ public class StartPush extends UseCase {
 
   @Override protected Observable buildUseCaseObservable() {
      //return repository.startPush("223.72.209.142", 6000);//
-    return repository.startPush("36.106.8.163", 6000);
+    //return repository.startPush("180.213.117.47", 6000);
     //jyj ceshi
-    //return repository.startPush("60.247.30.196", 10581);
+    return repository.startPush("223.72.209.140", 10581);
   }
 }

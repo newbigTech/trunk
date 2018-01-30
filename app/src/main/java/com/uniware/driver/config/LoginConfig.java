@@ -97,18 +97,18 @@ public class LoginConfig {
     return mPref.getInt("addressId",0);
   }
   public void setAddressId(int id){
-    mEditor.putInt("addressId",id);
+    mEditor.putInt("addressId",id).commit();
   }
   public String getAddressLat(){
     return mPref.getString("addressLat","0");
   }
   public void setAddressLat(String lat){
-    mEditor.putString("addressLat",lat);
+    mEditor.putString("addressLat",lat).commit();
   }
   public String getAddressLon(){
     return mPref.getString("addressLon","0");
   }
   public void setAddressLon(String lon){
-    mEditor.putString("addressLon",lon);
+    mEditor.putString("addressLon",lon).commit();
   }
 }

@@ -43,7 +43,7 @@ public class AddressPresenter implements Presenter {
       ((UpdateAddress)updateAddress).setDes("家");
     }
     else {
-      ((UpdateAddress)updateAddress).setDes("公司");
+      ((UpdateAddress)updateAddress).setDes("其他");
     }
     updateAddress.execute(new UpdateSubscriber());
   }
