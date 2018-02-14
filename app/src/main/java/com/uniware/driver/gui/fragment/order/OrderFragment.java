@@ -511,6 +511,7 @@ public class OrderFragment extends BaseFragment implements OrderFragmentView, Co
     LoginConfig.getInstance().setAddressId(data.getId());
     LoginConfig.getInstance().setAddressLat(data.getLat()+"");
     LoginConfig.getInstance().setAddressLon(data.getLon()+"");
+    LoginConfig.getInstance().setAddressType(data.getDescription());
     orderPanelPresenter.setModelApply(3);
     Tools.LISTEN_MODE= Tools.ListenMode.ADDRESS;
     EventBus.getDefault().post(Tools.LISTEN_MODE);

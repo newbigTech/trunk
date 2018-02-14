@@ -1,5 +1,6 @@
 package com.uniware.driver.mvp.presenter;
 
+import com.uniware.driver.config.LoginConfig;
 import com.uniware.driver.domain.RankResult;
 import com.uniware.driver.domain.interactor.DefaultSubscriber;
 import com.uniware.driver.domain.interactor.Rank;
@@ -26,6 +27,7 @@ public class RankPresenter implements Presenter {
 
   public void rankSearch(int type){
     ((Rank)rank).setType(type);
+    ((Rank)rank).setTel(LoginConfig.getInstance().getUserName());
     rank.execute(new RankSearchSubscribe());
   }
 

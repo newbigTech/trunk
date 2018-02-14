@@ -149,8 +149,8 @@ import rx.Observable;
     return tcpDataStore.modelApply(type);
   }
 
-  @Override public Observable<RankResult> rankSearch(int type) {
-    return restApiDataStore.rankSearch(type);
+  @Override public Observable<RankResult> rankSearch(int type,String tel) {
+    return restApiDataStore.rankSearch(type,tel);
   }
 
   @Override public Observable<NoticeResult> searchNotice(String tel, int page) {

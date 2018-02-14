@@ -12,6 +12,7 @@ public class Rank extends UseCase{
 
   private final Repository repository;
   private int type;
+  private String tel;
 
   public Rank(Repository repository, ThreadExecutor threadExecutor, PostExecutionThread postExecutionThread) {
     super(threadExecutor, postExecutionThread);
@@ -26,7 +27,15 @@ public class Rank extends UseCase{
     this.type = type;
   }
 
+  public String getTel() {
+    return tel;
+  }
+
+  public void setTel(String tel) {
+    this.tel = tel;
+  }
+
   @Override protected Observable buildUseCaseObservable() {
-    return repository.rankSearch(type);
+    return repository.rankSearch(type,tel);
   }
 }

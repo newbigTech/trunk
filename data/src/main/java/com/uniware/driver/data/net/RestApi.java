@@ -61,7 +61,7 @@ public interface RestApi {
   @GET("DriverAppController/setNewAddress.do") Observable<NetBiz> updateAddress(@Query("driverTel") String username,
       @Query("addressId") int addressId,@Query("address") String address,@Query("lon") double lon,@Query("lat") double lat,@Query("type") int type
       ,@Query("description") String description);
-  @GET("DriverAppController/askForRankingList.do")Observable<RankResult>rankSearch(@Query("type") int type);
+  @GET("DriverAppController/askForRankingList.do")Observable<RankResult>rankSearch(@Query("type") int type,@Query("driverTel") String driverTel);
 
   @GET("DriverAppController/messageHistory.do")Observable<NoticeResult>noticeSearch(@Query("driverTel") String driverTel,
       @Query("currPage") int currPage,@Query("pageSize") int pageSize);

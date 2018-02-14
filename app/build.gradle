@@ -1,4 +1,5 @@
 //presentation 表现层
+
 apply plugin: 'com.android.application'
 apply plugin: 'com.neenbedankt.android-apt'
 
@@ -20,8 +21,8 @@ android {
     applicationId "com.uniware.driver"
     minSdkVersion 15
     targetSdkVersion 22
-    versionCode 18
-    versionName "1.12.13"
+    versionCode 19
+    versionName "1.12.14"
     manifestPlaceholders = [GETUI_APP_ID    : "NB4dA5ONuVA32o9RWh4yE9",
                             GETUI_APP_KEY   : "DaetpMcci26TV02a4CJ1W",
                             GETUI_APP_SECRET: "vJYcsVbeSl5ugTE9IuRip9",
@@ -31,9 +32,9 @@ android {
     repositories {
       jcenter()
     }
-    task clean(type: Delete) {
-      delete rootProject.buildDir
-    }
+//    task clean(type: Delete) {
+//      delete rootProject.buildDir
+//    }
   }
   signingConfigs {
     debug {

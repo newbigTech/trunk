@@ -2,6 +2,7 @@ package com.uniware.driver.gui.ui;
 
 import android.app.Activity;
 import android.content.Context;
+import android.graphics.Typeface;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.Animation;
@@ -71,6 +72,8 @@ public class TitleView extends RelativeLayout {
   public void setTitle(OnClickListener listener) {
     this.mTitleName.setVisibility(VISIBLE);
     this.mTitleName.setText(this.getContext().getString(R.string.login_title_name_txt));
+    Typeface mtypeface=Typeface.createFromAsset(getContext().getAssets(),"youyuan.TTF");
+    this.mTitleName.setTypeface(mtypeface);
     this.mTitleLayoutBack.setVisibility(GONE);
     this.mTitleLayoutEndOrder.setVisibility(VISIBLE);
     this.mTitleLayoutEndOrder.setOnClickListener(listener);

@@ -175,8 +175,8 @@ import rx.functions.Func1;
         });
   }
 
-  public Observable<RankResult> rankSearch(int type){
-    return restApi.rankSearch(type)
+  public Observable<RankResult> rankSearch(int type,String tel){
+    return restApi.rankSearch(type,tel)
         .onErrorResumeNext(new Func1<Throwable, Observable<? extends RankResult>>() {
           @Override public Observable<? extends RankResult> call(Throwable throwable) {
             return Observable.error(new NetworkConnectionException(throwable));

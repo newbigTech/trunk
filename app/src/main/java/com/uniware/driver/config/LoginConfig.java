@@ -111,4 +111,10 @@ public class LoginConfig {
   public void setAddressLon(String lon){
     mEditor.putString("addressLon",lon).commit();
   }
+  public String getAddresstype(){
+    return mPref.getString("addressType","其他");
+  }
+  public void setAddressType(String type){
+    mEditor.putString("addressType",type).commit();
+  }
 }

@@ -66,7 +66,7 @@ public interface Repository {
 
   Observable<NetBiz> modelApply(int type);
 
-  Observable<RankResult> rankSearch(int type);
+  Observable<RankResult> rankSearch(int type,String tel);
 
   Observable<NoticeResult> searchNotice(String tel,int page);
 }

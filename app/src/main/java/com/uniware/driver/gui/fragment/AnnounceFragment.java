@@ -151,10 +151,10 @@ public class AnnounceFragment extends MainFragment
       case 1:
         tvListenMode.setText(String.format(getString(R.string.listening_mode), "普通模式"));
         break;
-      case 2:
-        tvListenMode.setText(String.format(getString(R.string.listening_mode), "定点模式"));
-        break;
       case 3:
+        tvListenMode.setText(String.format(getString(R.string.listening_mode), "定点模式"+"("+LoginConfig.getInstance().getAddresstype()+")"));
+        break;
+      case 2:
         tvListenMode.setText(String.format(getString(R.string.listening_mode), "指派模式"));
         break;
     }
@@ -173,7 +173,7 @@ public class AnnounceFragment extends MainFragment
   @Subscribe(threadMode = ThreadMode.PostThread)public void messageHandler(Tools.ListenMode mode){
     switch (mode){
       case ADDRESS:
-        tvListenMode.setText(String.format(getString(R.string.listening_mode), "定点模式"));
+        tvListenMode.setText(String.format(getString(R.string.listening_mode), "定点模式 "+"("+LoginConfig.getInstance().getAddresstype()+")"));
         break;
       case WEIGHT:
         tvListenMode.setText(String.format(getString(R.string.listening_mode), "重车模式"));
