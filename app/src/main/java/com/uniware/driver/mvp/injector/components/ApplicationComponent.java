@@ -1,13 +1,12 @@
 package com.uniware.driver.mvp.injector.components;
 
 import android.content.Context;
-
-import com.uniware.driver.gui.activity.BaseActivity;
-import com.uniware.driver.mvp.injector.modules.ApplicationModule;
 import com.uniware.driver.domain.executor.PostExecutionThread;
 import com.uniware.driver.domain.executor.ThreadExecutor;
 import com.uniware.driver.domain.repository.Repository;
-
+import com.uniware.driver.gui.activity.BaseActivity;
+import com.uniware.driver.gui.activity.BaseV4Activity;
+import com.uniware.driver.mvp.injector.modules.ApplicationModule;
 import dagger.Component;
 import javax.inject.Singleton;
 
@@ -18,7 +17,7 @@ import javax.inject.Singleton;
 @Component(modules = ApplicationModule.class)
 public interface ApplicationComponent {
   void inject(BaseActivity baseActivity);
-
+  void inject(BaseV4Activity baseActivity);
   //Exposed to sub-graphs.
   Context context();
   ThreadExecutor threadExecutor();

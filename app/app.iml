@@ -142,8 +142,8 @@
     <orderEntry type="library" exported="" name="analytics-6.1.4" level="project" />
     <orderEntry type="library" exported="" name="javax.inject-1" level="project" />
     <orderEntry type="library" exported="" name="rxandroid-1.1.0" level="project" />
-    <orderEntry type="library" exported="" name="netty-transport-4.1.0.Beta7" level="project" />
     <orderEntry type="library" exported="" name="rxjava-1.1.1" level="project" />
+    <orderEntry type="library" exported="" name="netty-transport-4.1.0.Beta7" level="project" />
     <orderEntry type="library" exported="" name="netty-codec-4.1.0.Beta7" level="project" />
     <orderEntry type="library" exported="" name="netty-transport-native-epoll-4.1.0.Beta7" level="project" />
     <orderEntry type="library" exported="" name="umeng-update-v2.6.0.1" level="project" />

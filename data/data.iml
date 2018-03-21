@@ -109,8 +109,8 @@
     <orderEntry type="library" exported="" name="netty-buffer-4.1.0.Beta7" level="project" />
     <orderEntry type="library" exported="" name="netty-resolver-4.1.0.Beta7" level="project" />
     <orderEntry type="library" exported="" name="jsr250-api-1.0" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="slf4j-api-1.7.6" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-23.1.1" level="project" />
     <orderEntry type="library" exported="" name="converter-gson-2.0.0-beta2" level="project" />
     <orderEntry type="library" exported="" name="rxnetty-common-0.5.2-RC1" level="project" />
     <orderEntry type="library" exported="" name="gson-2.4" level="project" />

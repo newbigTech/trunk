@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout
-    android:background="@drawable/common_bg_morning"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
     <RelativeLayout
+        android:background="@color/c_blue_55a2b8"
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -16,17 +16,40 @@
           android:layout_height="35dp"/>
        <TextView
            android:id="@+id/tv_type"
-           android:text="司机周榜"
+           android:text="排行榜"
            android:textSize="18sp"
            android:layout_centerHorizontal="true"
            android:padding="15dp"
            android:layout_width="wrap_content"
            android:layout_height="wrap_content"/>
+      <TextView
+          android:id="@+id/tv_guize"
+          android:text="榜单规则"
+          android:textSize="15sp"
+          android:layout_centerVertical="true"
+          android:layout_alignParentRight="true"
+          android:padding="15dp"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"/>
     </RelativeLayout>
-    <android.support.v7.widget.RecyclerView
-        android:layout_below="@id/title"
-        android:id="@+id/rv_rank"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+  <TextView
+      android:layout_below="@id/title"
+      android:layout_marginTop="-0.5dp"
+      android:background="@color/btn_gray_normal"
+      android:layout_width="match_parent"
+      android:layout_height="0.5dp"/>
+  <android.support.v4.view.ViewPager
+      android:id="@+id/viewPager"
+      android:layout_below="@id/title"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+    <android.support.v4.view.PagerTabStrip
+        android:id="@+id/pagerTabStrip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top"/>
+
+  </android.support.v4.view.ViewPager>
   </RelativeLayout>
 

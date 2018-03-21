@@ -27,7 +27,7 @@ public class RankResult extends NetBiz {
      * ranking : 1
      */
 
-    private String company;
+    private String company="";
     private int countNum;
     private String department;
     private int id;
@@ -43,7 +43,7 @@ public class RankResult extends NetBiz {
     }
 
     public String getCompany() {
-      return company;
+      return company+"";
     }
 
     public void setCompany(String company) {

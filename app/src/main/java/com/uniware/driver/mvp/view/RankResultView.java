@@ -10,7 +10,7 @@ import com.uniware.driver.domain.RankResult;
 public interface RankResultView {
   Context getContext();
 
-  void inSuccess(RankResult result);
+  void inSuccess(RankResult result,int type);
 
-  void inFailure(String reason);
+  void inFailure(String reason,int type);
 }
